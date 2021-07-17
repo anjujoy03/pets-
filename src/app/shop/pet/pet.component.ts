@@ -184,7 +184,7 @@ if(place =='all'){
         this.petForm.get('brand_name')?.setValue(this.Product_dtls[0]?.brand_name)
         this.petForm.get('age')?.setValue(this.Product_dtls[0]?.age)
         this.petForm.get('sex')?.setValue(this.Product_dtls[0]?.sex)
-        this.petForm.get('colour')?.setValue(this.Product_dtls[0]?.colour)
+        this.petForm.get('colour')?.setValue(this.Product_dtls[0]?.color)
         this.petForm.get('weight')?.setValue(this.Product_dtls[0]?.item_weight)
         this.petForm.get('shop_id')?.setValue(this.Product_dtls[0]?.shop_id)
         this.petForm.get('flavour')?.setValue(this.Product_dtls[0]?.flavour)
