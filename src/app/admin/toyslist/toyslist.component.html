@@ -183,12 +183,9 @@
   </nav> 
   </div>
  
-    <div class="col-md-2">
-      <button type="button"  (click)="filterdropdown()" class="btn btn-success addbutton"style=" float: right;margin-right: 30px !important;width:100px;">Filter</button> 
-      <mat-list role="list" style="position: absolute;
-      top: 41px;
-      left: -55px;
-      z-index: 1000;" *ngIf="this.isfilter" >
+    <div class="col-md-4">
+      <button type="button"  (click)="filterdropdown()" class="btn btn-success addbutton"style=" margin: right 20px; ">Filter</button> 
+      <mat-list role="list" style="margin-top:43px ;" *ngIf="this.isfilter" >
         <mat-list-item role="listitem" (click)="filter('food')" style="border-bottom: 1px solid grey">food</mat-list-item>
         <mat-list-item role="listitem" (click)="filter('toy')" style="border-bottom: 1px solid grey">toy</mat-list-item>
         <mat-list-item role="listitem" (click)="filter('pet')" style="border-bottom: 1px solid grey">pet</mat-list-item>
@@ -196,14 +193,14 @@
         
 
       </mat-list>
-       
-    </div>
-    <div class="col-md-2" >
-  
-        <button type="button" class="btn btn-success addbutton"style=" float: left;margin-right: 30px !important;width:100px; " data-toggle="modal" data-target="#myModal">Add</button>
+      <button type="button" class="btn btn-success addbutton"style=" float: right; " data-toggle="modal" data-target="#myModal">Add</button>
       
-       
     </div>
+    <!-- <div class="col-md-2" >
+  
+        
+       
+    </div> -->
 </div>
 
 

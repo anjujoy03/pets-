@@ -175,7 +175,7 @@
 
 
 <div class="row" style="padding-bottom: 0px;background-color: #5e72e4;margin-top: -20px;padding-top: 100px;">
-  <div class="col-md-6">
+  <div class="col-md-8">
   <nav aria-label="breadcrumb"style="padding-left: 21px;" >
     <ol class="breadcrumb"style="width: 50%; box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);" >
       <li class="breadcrumb-item" ><a href="home" style="color: black !important;">Home &nbsp;<i class="fas fa-home"></i></a></li>
@@ -183,30 +183,27 @@
     </ol>
   </nav> 
   </div>
-  <div class="row" style="background: #5e72e4">
-    <div class="col-md-6">
+  <!-- <div class="row" style="background: #5e72e4"> -->
+    <!-- <div class="col-md-6">
        
-    </div>
-    <div class="col-md-3">
-      <button type="button"  (click)="filterdropdown()" class="btn btn-success addbutton"style=" float: right;margin-right: 30px !important;width:100px;">Filter</button> 
-      <mat-list role="list" style="position: absolute;
-      top: 41px;
-      left: -55px;
-      z-index: 1000;" *ngIf="this.isfilter" >
+    </div> -->
+    <div class="col-md-4">
+      <button type="button"  (click)="filterdropdown()" class="btn btn-success addbutton" style="margin-left: 20px;">Filter</button> 
+      <mat-list role="list"  *ngIf="this.isfilter" style="margin-top: 43px;" >
         <mat-list-item role="listitem" (click)="filter(item['place'])" style="border-bottom: 1px solid grey" *ngFor="let item of this.doctorList">{{item['place']}}</mat-list-item>
         <!-- <mat-list-item role="listitem"><mat-icon style="color:rgb(168, 67, 67);font-size: 18px;">settings</mat-icon>Settings</mat-list-item> -->
         
 
       </mat-list>
-       
-    </div>
-    <div class="col-md-3" >
-  
-        <button type="button" class="btn btn-success addbutton"style=" float: left;margin-right: 30px !important;width:100px; " data-toggle="modal" data-target="#myModal">Add</button>
+      <button type="button" class="btn btn-success addbutton" data-toggle="modal" data-target="#myModal" style="float: right;"> Add</button>
       
+    </div>
+    <!-- <div class="col-md-3" >
+  
+        
        
     </div>
-</div>
+</div> -->
 
 </div>
 <!-- <div class="row" style="margin-left: 1px;">

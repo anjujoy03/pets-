@@ -86,13 +86,13 @@ export class HomeComponent implements OnInit {
       url:'registershop'
 
     },
-    { 
-      name: 'Reports',
-      iconClass: '../../../assets/img/categories.png',
-      active: false,
-      url:'home'
+    // { 
+    //   name: 'Reports',
+    //   iconClass: '../../../assets/img/categories.png',
+    //   active: false,
+    //   url:'home'
 
-    }
+    // }
   ]
 
 
