@@ -1,0 +1,13 @@
+
+  <ul id="accordion" class="accordion" style="margin-top: 27px;" >
+    <li *ngFor="let menu of menus; let i = index" 
+      [class.active]="menu.active">
+      <div class="menu">
+        <a [href]="menu.url">  <img [src]="menu.iconClass" style="width: 16px;margin-right: 10px">
+        <!-- <i [class]="menu.iconClass"></i> -->
+        <span [ngStyle]="{'color':menu.active ?'red':'black'}">{{ menu.name }}</span></a>
+      
+      </div>
+     
+    </li>
+  </ul>

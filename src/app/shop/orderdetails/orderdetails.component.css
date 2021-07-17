@@ -1,0 +1,280 @@
+/* card design start */
+
+.wrapper{
+  width: 100%;
+  height: 100%;
+  }
+  
+  /* after adding active class */
+   .sidebarsmall{
+  width: 80px;
+  }
+  .app-accordian{
+    display: none;
+  }
+  .accordion {
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+    background: #fff;
+    border-radius: 4px;
+  }
+  .activepage a{
+    background: #3f51b5 !important;
+    color: white !important;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05) !important;
+  }
+
+  #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+  
+    color: rgb(5, 5, 5);
+  }
+  
+  .accordion .menu {
+    position: relative;
+    padding: 17px 15px 25px 45px;
+    color: #4d4d4d;
+    font-weight: bold;
+    /* border-bottom: 1px solid #ccc; */
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+  
+  .accordion li:last-child .menu {
+    border-bottom: 0;
+  }
+  
+  .accordion li i {
+    position: absolute;
+    top: 1.2rem;
+    left: 1rem;
+    color: #595959;
+    transition: all 0.4s ease;
+  }
+  .wrapper.active .sidebar ul li a span.title,
+  .wrapper.active .profile_info
+  {
+  display: none;
+  }
+  
+  .main_container .bigcontainer{
+  width: calc(100% - 80px);
+  margin-left: 64px;
+  }
+  .wrapper.active .container .column #caard{
+  padding-right: 40px;
+  }
+.card{
+    border-radius: 18px;
+    background: #fff;
+    font-weight: 600;
+  
+   
+    text-align: center;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  margin-left: 20px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  width:50rem;
+  
+  
+  }
+  .card-header-title{
+      float: left;
+    font-weight: 500;
+    color: darkslategrey;
+  }
+    .activepage a{
+      background: #3f51b5 !important;
+      color: white !important;
+      box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05) !important;
+    }
+  /* card design end */
+  
+  
+  /* container */
+  .panel-body {
+    padding: 15px;
+}
+.delivery-lable{
+    float: left;
+    font-weight: 500;   
+}
+
+  
+  @media screen and (max-width: 768px) {
+    .container{
+      margin-left: 81px !important;
+     
+  }
+  .modal-content{
+    width: 60% !important;
+  }
+  #myModal{
+    width: 100% !important;
+    bottom: 0;
+    overflow-x: auto;
+  }
+  
+  #myMod{
+    left: 0px !important;
+    top: 10px;
+    width: 100% !important;
+    bottom: 0;
+    overflow-x: auto;
+  }
+  .modal-dialog{
+   
+    top: 0px !important;
+  
+    bottom: 0;
+    left: 0px !important;
+  
+  }
+  }
+  /* container end */
+  /* table scroll */
+  
+  @media screen and (max-width: 768px) {
+    
+    
+   table {
+        overflow-x: auto;
+        display: inline-block;
+    }
+    .col-lg-12{
+      padding-left: 18px !important;
+    }
+  }
+  
+  /* table scroll end */
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -46px;
+    margin-left: -21px;
+  }
+  .modal-dialog{
+    position: absolute;
+    top: 10px;
+  
+    bottom: 0px !important;
+    left: 170px;
+  
+  }
+  #myMod{
+    position: absolute;
+    top: 10px;
+  
+    bottom: 0;
+    left: 200px;
+  }
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -46px;
+    margin-left: -21px;
+  }
+  #modal{
+  position: absolute;
+  top: 10px;
+  
+  bottom: 0;
+  left: 113px;
+  }
+  
+  
+  .preview-images-zone {
+  width: 86%;
+  border: 1px solid #ddd;
+  min-height: 180px;
+  /* display: flex; */
+  padding: 5px 5px 0px 5px;
+  position: relative;
+  overflow:auto;
+  }
+  .preview-images-zone > .preview-image:first-child {
+  height: 185px;
+  width: 185px;
+  position: relative;
+  margin-right: 5px;
+  }
+  .preview-images-zone > .preview-image {
+  height: 90px;
+  width: 90px;
+  position: relative;
+  margin-right: 5px;
+  float: left;
+  margin-bottom: 5px;
+  }
+  .preview-images-zone > .preview-image > .image-zone {
+  width: 100%;
+  height: 100%;
+  }
+  .preview-images-zone > .preview-image > .image-zone > img {
+  width: 100%;
+  height: 100%;
+  }
+  .preview-images-zone > .preview-image > .tools-edit-image {
+  position: absolute;
+  z-index: 100;
+  color: #fff;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  display: none;
+  }
+  .preview-images-zone > .preview-image > .image-cancel {
+  font-size: 18px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
+  display: none;
+  z-index: 100;
+  }
+  .preview-image:hover > .image-zone {
+  cursor: move;
+  opacity: .5;
+  }
+  .preview-image:hover > .tools-edit-image,
+  .preview-image:hover > .image-cancel {
+  display: block;
+  }
+  
+  ul.a {
+  list-style-type: circle;
+  }
+  .panel-inverse {
+    border-color: #000;
+}
+
+
+
+

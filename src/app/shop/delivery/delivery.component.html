@@ -1,0 +1,276 @@
+
+
+    <div  [ngClass]="{'wrapper': show}">
+      
+        <div class="main_container">
+            <div class="sidebar" [ngClass]="{'sidebarsmall': show}" >
+                <div class="sidebar__inner">
+                  <div class="profile">
+                    <!-- <div class="img">
+                      <img src="../../assets/IMG/exeq engineers.png" alt="profile_pic" style="width: 180px;height: 170px;"> 
+                    </div> -->
+                    <!-- <div class="profile_info">
+                       <p></p>
+                       <p class="profile_name">Alex John</p>
+                    </div> -->
+                  </div>
+                  <ul>
+                    
+                    <!-- <li>
+                      <a href="home" class="active">
+                        <span class="icon">
+                          <i class="fas fa-home"  style="color: plum;" ></i>
+                        </span>
+                        <span class="title">Dashboard</span>
+                      </a>
+                    </li> -->
+                    <div class="top_navbarr" id="fixed-nav-bar"  >
+                    <div class="hamburger" >
+                      <div class="hamburger__inner" (click)="toggle()">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                      </div>
+                   </div>
+                   <div style="padding: 18px;">
+                     <span style="color: #5e72e4;
+                     font-size: 35px;
+                     font-weight: bold;
+                     font-family: fangsong;">PETS</span>
+                   </div>
+                   </div>
+         
+              
+                  <app-accordian style="margin-top: 21px;" [ngClass]="{'app-accordian': show}"
+                  [options]="options" 
+                  [menus]="menus">
+                 
+                </app-accordian>
+                      
+
+                <ul style="margin-top: 27px;" class="accordion" *ngIf="show">
+                  <li *ngFor="let menu of menus; let i = index" 
+                    [class.active]="menu.active">
+                    <div class="menu">
+                     
+                    <img [src]="menu.iconClass" style="width: 16px;margin-right: 10px">
+                    </div>
+                  </li>
+               
+                  
+            </ul>
+
+              
+                    <!-- <ul class="collapsible collapsible-accordion">
+                      <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chevron-right"></i> Submit
+                          blog<i class="fas fa-angle-down rotate-icon"></i></a>
+                        <div class="collapsible-body">
+                          <ul>
+                            <li><a href="#" class="waves-effect">Submit listing</a>
+                            </li>
+                            <li><a href="#" class="waves-effect">Registration form</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      
+                      
+                      
+                   
+                </ul> -->
+                <!--  <li>
+                    <a href="viewcomplaint">
+                      <span class="icon"><i class="fa fa-spinner" style="color: lightcoral;"></i></span>
+                      <span class="title">Complaints</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="customerdetails">
+                      <span class="icon">
+                    <i class="fas fa-users" style="color:lightpink ;"></i></span>
+                      <span class="title">Customers</span>
+                    </a>
+                  </li> -->
+  
+    
+                                     
+                  </ul>
+                  
+                 
+                </div>
+            </div>
+            
+    <body style="background-color:#F7F9F6;">
+       
+      <div class="container" style=" margin-top: 0px;max-width: 100% !important;" [ngClass]="{'bigcontainer': show}" >
+        <div class="top_navbar" id="fixed-nav-bar" style="padding-top: 30px;">
+            <div class="row col-md-12" style="margin-top: -11px;">
+                <div class="col-md-8">
+                 <div style="margin-top: -20px;">
+                  
+                    <!-- <div class="input-group" style="width: 42%;
+                    height: 44px;">
+                        <input type="text" class="form-control search-form" 
+                         placeholder="Search" style="height: 44px;">
+                         <span class="input-group-btn">
+                           <button type="submit" 
+                           class="btn search-btn" data-target="#search-form" 
+                           name="q">
+                             <i class="fa fa-search"></i>
+                           </button>
+                         </span>
+                       </div> -->
+                    
+                 </div>
+      
+                        
+                      
+                </div>
+                <div class="col-md-4">
+                <div class="profile px-8" >
+                  
+                  <!-- <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Dropdown link</a></li>
+                      <li><a href="#">Dropdown link</a></li>
+                    </ul>
+                  </div> -->
+                   
+                        <!-- <span class="icon shadow-lg"><i class="fas fa-profile" data-toggle="tooltip" data-placement="top" title="Logout" style="color: white;text-shadow: 0 0 black"></i></span> -->
+                        <!-- <mat-icon   style="color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);font-size: 31px;">account_circle</mat-icon> -->
+                        <mat-icon  style="cursor:pointer;" *ngIf="logactive"  style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>
+                        <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;margin-left: 15px;font-size: 25px;" (click)="accountdropdown()">account_circle
+                          <div></div></mat-icon>&nbsp;&nbsp;<span style="color:white;position: absolute;">{{UserId}}</span>
+                          
+                          <mat-list role="list" *ngIf="logactive">
+                            <mat-list-item role="listitem"><mat-icon style="color: darkcyan;font-size: 18px;">perm_identity</mat-icon>{{UserId}}</mat-list-item>
+                          
+                            <hr>
+                            <mat-list-item role="listitem" (click)="Logout()"><mat-icon style="color:rgb(226, 149, 6);font-size: 18px;">settings_power</mat-icon>Logout</mat-list-item>
+                          </mat-list>
+                    
+                    
+                    
+                </div>
+
+            </div>
+          </div>
+           
+          <!-- <div class="menu" style="position: static; float: none;">
+    
+        
+            <li>
+              <a href="login">
+                <span class="icon"><i class="fas fa-sign-out-alt" data-toggle="tooltip" data-placement="top" title="Logout" style="color: black;"></i></span>
+                <span class="title"></span>
+              </a>
+              </li>
+         
+          </div> -->
+        </div>
+   
+  
+      <div class="row" style="padding-bottom: 0px;background-color: #5e72e4;margin-top: -20px;padding-top: 100px;">
+        <div class="col-md-6">
+        <nav aria-label="breadcrumb"style="padding-left: 21px;" >
+          <ol class="breadcrumb"style="width: 50%; box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);" >
+            <li class="breadcrumb-item" ><a href="home" style="color: black !important;">Home &nbsp;<i class="fas fa-home"></i></a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="text-decoration: none;cursor: initial;">Delivery  &nbsp;<i class="fa fa-shopping-cart" aria-hidden="true"></i></li>
+          </ol>
+        </nav> 
+        </div>
+        <div class="col-md-3">
+            
+           
+        </div>
+        <div class="col-md-3" >
+            <!-- <button type="button" class="btn btn-success"style=" float: right;margin-right: 10px !important; " >Filter</button> -->
+            <!-- <button type="button" class="btn btn-success"style=" float: right;margin-right: 30px !important;width:100px; " data-toggle="modal" data-target="#myModal">Add</button> -->
+          
+           
+        </div>
+     
+      </div>
+      <!-- <div class="row" style="margin-left: 1px;">
+          <div class="col-md-6" style="padding-left: 0px;">
+             <ul class="nav nav-tabs">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" style="background-color:  #d0cacf;text-decoration: none;">Charging Station Details </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="addcharger">Add Charging Station Details</a>
+              </li> &nbsp;&nbsp;
+               
+             </ul>
+          </div>
+      </div> -->
+      <!-- <div class="row" style="padding-bottom: 10px;">
+          <div class="col-md-6">
+             
+          </div>
+          <div class="col-md-3">
+              
+             
+          </div>
+          <div class="col-md-3" >
+            
+              <button type="button" class="btn btn-success"style=" float: right;margin-right: 30px !important;width:100px; " data-toggle="modal" data-target="#myModal">Add</button>
+            
+             
+          </div>
+      </div> -->
+      <div class="row" style="background-color: #5e72e4;padding-bottom:100px"  ></div>
+  
+  
+      <div class="row" style="margin-top: -60px;">
+        
+        
+            <div class="col-lg-12" style="padding-left: 23px;">
+                <div class="card" style="width: 99%;margin-left: 0px;border-radius: 2px;" >
+                  <br>
+                  <br>
+                    <div class="card-header border-0">
+                        <h3 class="mb-0 card-header-title " style="font-size: 20px;">Delivery Settings</h3>
+                      </div>
+                      <br>
+                      <br>
+                    <div class="panel-body">
+                        <form name="setform" class="ng-pristine ng-valid ng-valid-min ng-valid-required" [formGroup]="DeliveryForm">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1" class="delivery-lable">Free Delivery Above</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span style='font-family:Arial;'>&#8377;</span></span>
+                                    <input placeholder="Enter Cost" class="form-control ng-pristine ng-untouched ng-valid ng-valid-min ng-not-empty ng-valid-required" formControlName="price_condition"  type="text">					
+                                </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1" class="delivery-lable">Delivery Cost</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span style='font-family:Arial;'>&#8377;</span></span>
+                                    <input placeholder="Enter Delivery Cost" class="form-control ng-pristine ng-untouched ng-valid ng-valid-min ng-not-empty ng-valid-required" formControlName="deliver_charge"   type="text">					
+                                </div>
+                          </div>
+                
+                         <div class="form-group">
+                            <label for="exampleInputPassword1" class="delivery-lable">Delivery Note</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-list"></i></span>
+                                <textarea rows="2" placeholder="Enter Delivery Note" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty"  formControlName="delivery_note"  ></textarea>					
+                            </div>
+                         </div>
+                        
+                         <button type="button"  (click)="DeliverySetting()" style="float:left;width:89px;background-color: #5e72e4;box-shadow: 0 6px 10px rgb(0 0 0 / 8%), 0 0 6px rgb(0 0 0 / 5%);" class="btn btn-sm  text-white px-3">
+                            <i class="fas fa- pencil"></i>Edit
+                          </button>
+                        </form>
+                    </div>
+                </div>
+                    </div>
+                    
+         </div>
+         </div>
+      </body>

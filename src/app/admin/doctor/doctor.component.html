@@ -1,0 +1,1080 @@
+<div  [ngClass]="{'wrapper': show}">
+      
+  <div class="main_container">
+      <div class="sidebar" [ngClass]="{'sidebarsmall': show}" >
+          <div class="sidebar__inner">
+            <div class="profile">
+              <!-- <div class="img">
+                <img src="../../assets/IMG/exeq engineers.png" alt="profile_pic" style="width: 180px;height: 170px;"> 
+              </div> -->
+              <!-- <div class="profile_info">
+                 <p></p>
+                 <p class="profile_name">Alex John</p>
+              </div> -->
+            </div>
+            <ul>
+              
+              <!-- <li>
+                <a href="home" class="active">
+                  <span class="icon">
+                    <i class="fas fa-home"  style="color: plum;" ></i>
+                  </span>
+                  <span class="title">Dashboard</span>
+                </a>
+              </li> -->
+              <div class="top_navbarr" id="fixed-nav-bar"  >
+              <div class="hamburger" >
+                <div class="hamburger__inner" (click)="toggle()">
+                  <div class="one"></div>
+                  <div class="two"></div>
+                  <div class="three"></div>
+                </div>
+             </div>
+             <div style="padding: 18px;">
+               <span style="color: #5e72e4;
+               font-size: 35px;
+               font-weight: bold;
+               font-family: fangsong;">PETS</span>
+             </div>
+             </div>
+
+
+             <app-admiaccordian style="margin-top: 21px;"  [menus]="menus"  [ngClass]="{'app-accordian': show}"></app-admiaccordian>
+   
+        
+            <!-- <app-accordian style="margin-top: 21px;" [ngClass]="{'app-accordian': show}"
+            [options]="options" 
+            [menus]="menus">
+           
+          </app-accordian> -->
+                
+
+          <ul style="margin-top: 27px;" class="accordion" *ngIf="show">
+            <li *ngFor="let menu of menus; let i = index" 
+              [class.active]="menu.active">
+              <div class="menu">
+               
+              <img [src]="menu.iconClass" style="width: 16px;margin-right: 10px">
+              </div>
+            </li>
+         
+            
+      </ul>
+
+        
+              <!-- <ul class="collapsible collapsible-accordion">
+                <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chevron-right"></i> Submit
+                    blog<i class="fas fa-angle-down rotate-icon"></i></a>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li><a href="#" class="waves-effect">Submit listing</a>
+                      </li>
+                      <li><a href="#" class="waves-effect">Registration form</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                
+                
+                
+             
+          </ul> -->
+          <!--  <li>
+              <a href="viewcomplaint">
+                <span class="icon"><i class="fa fa-spinner" style="color: lightcoral;"></i></span>
+                <span class="title">Complaints</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerdetails">
+                <span class="icon">
+              <i class="fas fa-users" style="color:lightpink ;"></i></span>
+                <span class="title">Customers</span>
+              </a>
+            </li> -->
+
+
+                               
+            </ul>
+            
+           
+          </div>
+      </div>
+      
+<body style="background-color:#F7F9F6;">
+ 
+<div class="container" style=" margin-top: 0px;max-width: 100% !important;" [ngClass]="{'bigcontainer': show}" >
+  <div class="top_navbar" id="fixed-nav-bar" style="padding-top: 30px;">
+      <div class="row col-md-12" style="margin-top: -11px;">
+          <div class="col-md-8">
+           <div style="margin-top: -20px;">
+            
+              <!-- <div class="input-group" style="width: 42%;
+              height: 44px;">
+                  <input type="text" class="form-control search-form" 
+                   placeholder="Search" style="height: 44px;">
+                   <span class="input-group-btn">
+                     <button type="submit" 
+                     class="btn search-btn" data-target="#search-form" 
+                     name="q">
+                       <i class="fa fa-search"></i>
+                     </button>
+                   </span>
+                 </div> -->
+              
+           </div>
+
+                  
+                
+          </div>
+          <div class="col-md-4">
+          <div class="profile px-8" >
+            
+            <!-- <div class="btn-group" role="group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
+              </ul>
+            </div> -->
+             
+                  <!-- <span class="icon shadow-lg"><i class="fas fa-profile" data-toggle="tooltip" data-placement="top" title="Logout" style="color: white;text-shadow: 0 0 black"></i></span> -->
+                  <!-- <mat-icon   style="color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);font-size: 31px;">account_circle</mat-icon> -->
+                  <!-- <mat-icon style="color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);font-size: 31px;">account_circle</mat-icon> -->
+                  <mat-icon  style="cursor:pointer;" *ngIf="logactive"  style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>
+                  <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>&nbsp;&nbsp;<span style="color:white">{{UserId}}</span>
+                    
+                  <mat-list role="list" *ngIf="logactive">
+                    <mat-list-item role="listitem"><mat-icon style="color: darkcyan;font-size: 18px;">perm_identity</mat-icon>{{UserId}}</mat-list-item>
+                    <!-- <mat-list-item role="listitem"><mat-icon style="color:rgb(168, 67, 67);font-size: 18px;">settings</mat-icon>Settings</mat-list-item> -->
+                    <hr>
+                    <mat-list-item role="listitem" (click)="Logout()"><mat-icon style="color:rgb(226, 149, 6);font-size: 18px;">settings_power</mat-icon>Logout</mat-list-item>
+                  </mat-list>
+              
+              
+          </div>
+
+      </div>
+    </div>
+     
+    <!-- <div class="menu" style="position: static; float: none;">
+
+  
+      <li>
+        <a href="login">
+          <span class="icon"><i class="fas fa-sign-out-alt" data-toggle="tooltip" data-placement="top" title="Logout" style="color: black;"></i></span>
+          <span class="title"></span>
+        </a>
+        </li>
+   
+    </div> -->
+  </div>
+
+
+<div class="row" style="padding-bottom: 0px;background-color: #5e72e4;margin-top: -20px;padding-top: 100px;">
+  <div class="col-md-6">
+  <nav aria-label="breadcrumb"style="padding-left: 21px;" >
+    <ol class="breadcrumb"style="width: 50%; box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);" >
+      <li class="breadcrumb-item" ><a href="home" style="color: black !important;">Home &nbsp;<i class="fas fa-home"></i></a></li>
+      <li class="breadcrumb-item active" aria-current="page" style="text-decoration: none;cursor: initial;">Doctors  &nbsp;<i class="fa fa-stethoscope" aria-hidden="true"></i></li>
+    </ol>
+  </nav> 
+  </div>
+  <div class="row" style="background: #5e72e4">
+    <div class="col-md-6">
+       
+    </div>
+    <div class="col-md-3">
+      <button type="button"  (click)="filterdropdown()" class="btn btn-success addbutton"style=" float: right;margin-right: 30px !important;width:100px;">Filter</button> 
+      <mat-list role="list" style="position: absolute;
+      top: 41px;
+      left: -55px;
+      z-index: 1000;" *ngIf="this.isfilter" >
+        <mat-list-item role="listitem" (click)="filter(item['place'])" style="border-bottom: 1px solid grey" *ngFor="let item of this.doctorList">{{item['place']}}</mat-list-item>
+        <!-- <mat-list-item role="listitem"><mat-icon style="color:rgb(168, 67, 67);font-size: 18px;">settings</mat-icon>Settings</mat-list-item> -->
+        
+
+      </mat-list>
+       
+    </div>
+    <div class="col-md-3" >
+  
+        <button type="button" class="btn btn-success addbutton"style=" float: left;margin-right: 30px !important;width:100px; " data-toggle="modal" data-target="#myModal">Add</button>
+      
+       
+    </div>
+</div>
+
+</div>
+<!-- <div class="row" style="margin-left: 1px;">
+    <div class="col-md-6" style="padding-left: 0px;">
+       <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" style="background-color:  #d0cacf;text-decoration: none;">Charging Station Details </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="addcharger">Add Charging Station Details</a>
+        </li> &nbsp;&nbsp;
+         
+       </ul>
+    </div>
+</div> -->
+
+<div class="row" style="background-color: #5e72e4;padding-bottom:100px"  ></div>
+
+
+<div class="row" style="margin-top: -60px;">
+  
+  
+      <div class="col-lg-12" style="padding-left: 23px;">
+          <div class="card" style="width: 99%;margin-left: 0px;border-radius: 2px;" >
+            <br>
+            <br>
+              <div class="card-header border-0">
+                  <h6 class="mb-0 card-header-title " style="font-size: 20px;">Manage Doctors</h6>
+                </div>
+                <br>
+                <br>
+          <table class="table  table-striped table-bordered"
+            style="border-collapse:collapse;padding-top: 20px !important;">
+            <thead style="background: #5e72e4;font-family: serif;color:white;height: 64px;">
+                    <tr>
+                        <th>NO.</th>
+                        <th>DOCTOR NAME</th>
+                        <th>SPECIALIST</th>
+                        <th>CONTACT NUMBER</th>
+                        <th>DISTRICT</th>
+                        <th>ACTION</th>
+                  
+                    </tr>
+                </thead>
+                <tbody>
+           
+                  <ng-container *ngFor="let doc of this.pagedItems;let i=index">
+                    <tr>
+                        <td>{{doc['doc_id']}}</td>
+                        <td>{{doc['doc_name']}}</td>
+                        <td>{{doc['speciality']}}</td>
+                        <td>
+                          {{doc['contact_number']}}
+                        </td>
+                        <td>
+                          {{doc['place']}}
+                        </td>
+                        <td> 
+                            <ul class="list-inline m-0">
+                                <li class="list-inline-item" style="padding-right: 20px;padding-bottom: 10px;">
+                                    <button class="btn btn-success btn-sm rounded-0"  style="color: #7278bc;
+                                    background:none;
+                                    border: none;"type="button" data-toggle="tooltip" data-placement="top" title="View" (click)="viewDetails(doc['doc_id'],doc,'eye')" ><i *ngIf="doc.expanded" class="fa fa-eye"></i><i *ngIf="!doc.expanded" class="fa fa-eye-slash"></i></button>
+                                </li>
+
+                            <li class="list-inline-item" style="padding-right: 20px;padding-bottom: 10px;">
+                                <button class="btn btn-success btn-sm rounded-0" style="color: #3a9834;
+                                background:none;
+                                border: none;" type="button" data-toggle="tooltip" data-placement="top" title="Update"  (click)="viewDetails(doc['doc_id'],doc,'edit')"><i class="fa fa-edit" data-toggle="modal" data-target="#myModa"></i></button>
+                            </li>
+                            <li class="list-inline-item" style="padding-right: 20px;padding-bottom: 10px;">
+                                <button class="btn btn-danger btn-sm rounded-0"  style="background: none;
+                                border: none;
+                                color: #c33737;"type="button" data-toggle="tooltip" data-placement="top" title="Delete" (click)="DeleteDoctors(doc['doc_id'],i)"><i class="fa fa-trash"></i></button>
+                            </li>
+                           
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr *ngIf="doc.expanded">
+                      <td colspan="6">
+          
+                    
+                    <mat-vertical-stepper>
+                      <mat-step>
+                        <ng-template matStepLabel>Peronal Details</ng-template>
+                   
+                         Name: <p>{{this.doctorDetils && this.doctorDetils[0]?.doc_name}}</p>
+                         <br>
+                         Gender:<p>{{this.doctorDetils && this.doctorDetils[0]?.gender}}</p>
+                       
+                      </mat-step>
+                      <mat-step>
+                        <ng-template matStepLabel>Proffessional Details</ng-template>
+                        
+                          Specialised In:<p>{{this.doctorDetils && this.doctorDetils[0]?.speciality}}</p>
+                          <br>
+                          Membership Details:<p>{{this.doctorDetils && this.doctorDetils[0]?.memb_details}}</p>
+                          <br>
+                          License Number:<p>{{this.doctorDetils && this.doctorDetils[0]?.licence_number}}</p>
+                          <br>
+                          Date of  Certification:<p>{{this.doctorDetils && this.doctorDetils[0]?.date_certicialtion}}</p>
+                          
+                          
+                          
+                        
+                      </mat-step>
+                      <mat-step>
+                        <ng-template matStepLabel>Consultation Details</ng-template>
+                       
+                          
+                          Consultation  Time:<p>{{this.doctorDetils && this.doctorDetils[0]?.consultation_time}}</p>
+                          <br>
+                          Consultation  Days:<p>{{this.doctorDetils && this.doctorDetils[0]?.consulting_days}}</p>
+                          <br>
+                          Consultation  Fees:<p>Rs.{{this.doctorDetils && this.doctorDetils[0]?.doc_no}}/-</p>
+                    
+                    
+                    
+                      </mat-step>
+                      <mat-step>
+                        <ng-template matStepLabel>Contact Details</ng-template>
+                        Contact Number:<p>{{this.doctorDetils && this.doctorDetils[0]?.contact_number}}</p>
+                        <br>
+                        Address:<p>{{this.doctorDetils && this.doctorDetils[0]?.adress}}</p>
+                        <br>
+                      </mat-step>
+                    </mat-vertical-stepper>
+                      
+                    <!-- <div  style="padding: 20px;">
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Doctor Name:</b></label>
+                      <div class="col-sm-9">
+                          <p>{{this.doctorDetils && this.doctorDetils[0]?.doc_name}}</p>
+
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Type of Medicine:</b></label>
+                      <div class="col-sm-9">
+                          <p>{{this.doctorDetils && this.doctorDetils[0]?.doc_name}}</p>
+
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Specialist Category:</b></label>
+                      <div class="col-sm-9">
+                          <p>{{this.doctorDetils && this.doctorDetils[0]?.speciality}}</p>
+
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Date of Cetification:</b></label>
+                      <div class="col-sm-9">
+                          <p>{{this.doctorDetils && this.doctorDetils[0]?.date_certicialtion}}</p>
+
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Gender:</b></label>
+                      <div class="col-sm-9">
+                          <p>{{this.doctorDetils && this.doctorDetils[0]?.gender}}</p>
+
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>License Number:</b></label>
+                      <div class="col-sm-9">
+                          <p>{{this.doctorDetils && this.doctorDetils[0]?.licence_number}}</p>
+
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Proffessional Membership Details:</b></label>
+                      <div class="col-sm-9">
+                        <p>{{this.doctorDetils && this.doctorDetils[0]?.memb_details}}</p>
+                   
+
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Consulting Time:</b></label>
+                      <div class="col-sm-9">
+                          <p>{{this.doctorDetils && this.doctorDetils[0]?.consultation_time}}</p>
+
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Consulting Days:</b></label>
+                      <div class="col-sm-9">
+                          <p>{{this.doctorDetils && this.doctorDetils[0]?.consulting_days}}</p>
+
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Consulting Fees:</b></label>
+                      <div class="col-sm-9">
+                          <p>{{this.doctorDetils && this.doctorDetils[0]?.consulting_days}}</p>
+
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Mobile Number:</b></label>
+                      <div class="col-sm-9">
+                          <p>{{this.doctorDetils && this.doctorDetils[0]?.contact_number}}</p>
+
+                      </div>
+                    </div> 
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Address:</b></label>
+                      <div class="col-sm-9">
+                          <p style=" max-width:250px;
+                          word-wrap:break-word;">{{this.doctorDetils && this.doctorDetils[0]?.adress}} </p>
+
+                      </div>
+                    </div>
+                  </div> -->
+             
+                 </td>
+                 </tr>
+                  </ng-container>
+                  
+                   
+
+                    
+
+
+                       
+                </tbody>
+            </table>
+            <div class="right" style="text-align: right;">
+              <div  style="text-align: right !important;">
+                <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                  <!-- <li [ngClass]="{disabled:pager.currentPage === 1}">
+                      <a (click)="setPage(1)">First</a>
+                  </li> -->
+                  <li [ngClass]="{disabled:pager.currentPage === 1}">
+                      <a (click)="setPage(pager.currentPage - 1)">«</a>
+                  </li>
+                  <li *ngFor="let page of pager.pages" [ngClass]="{activepage:pager.currentPage === page}">
+                      <a (click)="setPage(page)">{{page}}</a>
+                  </li>
+                  <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                      <a (click)="setPage(pager.currentPage + 1)">»</a>
+                  </li>
+                  <!-- <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                      <a (click)="setPage(pager.totalPages)">Last</a>
+                  </li> -->
+              </ul>
+              </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="modal" id="myModa" >
+        <div class="modal-dialog" >
+          <div class="modal-content"style="width: 200% !important;left: 0;margin-bottom:90px">
+            <div class="modal-header">
+              <h4 class="modal-title" style="color: white;">
+                  
+                Update Doctors Details
+                  
+              </h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form style="padding-left: 10px;padding-right: 40px;" [formGroup]="doctorForm">
+                <div class="row">
+                  <div class="col">
+                    <label for="exampleFormControlInput1"><b>Doctor Name:</b></label>
+                    <input type="text" class="form-control" id="drname" placeholder=""  formControlName="doc_name">
+                  </div>
+                  <div class="col">
+                    <label for="exampleFormControlInput1"><b>Clinic/Hospital Name :</b></label>
+                    <input type="text" class="form-control" id="drname" placeholder=""  formControlName="clinic_name">
+                  </div>
+                  <div class="col">
+                    <label for="exampleFormControlInput2"><b>Specialist Category:</b></label>
+                    <select class="form-control" id="Specialistcategory" formControlName="speciality">
+                      <option value="ANESTHESIA AND ANALGESIA">ANESTHESIA AND ANALGESIA</option>
+                      <option value="ANIMAL WELFARE">ANIMAL WELFARE</option>
+                      <option value="BEHAVIORAL MEDICINE"> BEHAVIORAL MEDICINE</option>
+                      <option value="CLINICAL PHARMACOLOGY"> CLINICAL PHARMACOLOGY</option>
+                      <option value="DENTISTRY">  DENTISTRY</option>
+                      <option value="DERMATOLOGY"> DERMATOLOGY</option>
+                      <option value="EMERGENCY AND CRITICAL CARE">EMERGENCY AND CRITICAL CARE</option>
+                      <option value="INTERNAL MEDICINE">INTERNAL MEDICINE</option>
+                      <option value="LABORATORY ANIMAL MEDICINE">LABORATORY ANIMAL MEDICINE</option>
+                      <option value="ZOOLOGICAL MEDICINE"> ZOOLOGICAL MEDICINE</option>
+                      <option value="TOXICOLOGY"> TOXICOLOGY</option>
+                      <option value="THERIOGENOLOGY"> THERIOGENOLOGY</option>
+                      <option value="SURGERY"> SURGERY</option>
+                      <option value="SPORTS MEDICINE AND REHABILITATION"> SPORTS MEDICINE AND REHABILITATION</option>
+                      <option value="SPECIES-SPECIALIZED VETERINARY PRACTICE">SPECIES-SPECIALIZED VETERINARY PRACTICE</option>
+                      <option value="RADIOLOGY"> RADIOLOGY</option>
+                      <option value="PREVENTIVE MEDICINE"> PREVENTIVE MEDICINE</option>
+                      <option value="POULTRY VETERINARY MEDICINE"> POULTRY VETERINARY MEDICINE</option>
+                      <option value="MICROBIOLOGY"> PATHOLOGY</option>
+                      <option value="OPHTHALMOLOGY"> OPHTHALMOLOGY</option>
+                      <option value="NUTRITION"> NUTRITION</option>
+                      <option value="MICROBIOLOGY">MICROBIOLOGY</option>
+                    </select>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col">
+                    <label for="exampleFormControlInput1"><b>Type of Medicine:</b></label>
+                  <select class="form-control" id="typeofmedicine" formControlName="medicine_type">
+                    <option value="AYURVEDA">AYURVEDA</option>
+                    <option value="HOMEOPATHY">HOMEOPATHY</option>
+                    <option value="ALOPATHY">ALOPATHY</option>
+                  </select>
+                   </div>
+                 
+                
+                 
+                  <div class="col">
+                    <label for="exampleFormControlSelect1"><b>Proffessional Membership Details:</b></label>
+                    <textarea class="form-control" id="membership" rows="1" formControlName="memb_details"></textarea>
+                  </div>
+                </div>
+                
+                <br>
+                <div class="row">
+
+                  <div class="col">
+                    <label for="exampleFormControlSelect1"><b>License Number:</b></label>
+                    <input type="text" class="form-control" id="licenseno" placeholder="" formControlName="licence_number" >
+                  </div>
+                  <div class="col">
+                   
+                  
+                      <label for="exampleFormControlInput3"><b>Gender:</b> </label>
+                      <select class="form-control" id="purpose" formControlName="gender">
+                        <option selected disabled>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+  
+                    </select>
+                   
+
+                  </div>
+                 
+                 
+                </div>
+                <br>
+                
+                <div class="row">
+                  
+                   <div class="col">
+                    <label for="exampleFormControlSelect1"><b>Date of Cetification:</b></label>
+                    <input type="date" class="form-control" id="dateofcertification" placeholder="" formControlName="date_certicialtion" >
+                   
+                  </div>
+                  <div class="col">
+                    <label for="exampleFormControlSelect1"><b>Consulting Fees:</b></label>
+                    <input type="text" class="form-control" id="fees" placeholder="" formControlName="fees">
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col">
+                    <label for="exampleFormControlTextarea1"><b>Consulting Days :</b> </label>
+                    <input type="text" class="form-control" id="day" placeholder="" formControlName="consulting_days" >
+                   
+                  </div>
+                  <div class="col">
+                    <label for="exampleFormControlTextarea1"><b>Consulting Time:</b></label>
+                    <input type="time" class="form-control" id="time" placeholder=""  formControlName="consulting_time">
+                  </div>
+                 
+                </div>
+               
+                <br>
+                <div class="row">
+                  <div class="col">
+                    <label for="exampleFormControlTextarea1"><b>State :</b> </label>
+                  
+                    <select class="form-control" id="typeofmedicine" formControlName="state" (change)="getDistrict($event)">
+                      <option *ngFor="let state of this.States" value="{{state.state_id}}">{{state.state_title}}</option>
+
+                    </select>
+                    
+                   
+                  </div>
+                  <div class="col">
+                    <label for="exampleFormControlTextarea1"><b>Distrct :</b></label>
+                    <select class="form-control" id="typeofmedicine" formControlName="place" >
+                      <option *ngFor="let district of this.District" value="{{district.district_title}}">{{district.district_title}}</option>
+
+                    </select>
+
+                  </div>
+                 
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col">
+                    <label for="exampleFormControlTextarea1"><b>Mobile Number :</b> </label>
+                    <input type="number" class="form-control" id="mobile" placeholder="" formControlName="contact_number" >
+                  </div>
+                  <div class="col">
+                    <label for="exampleFormControlTextarea1"><b>Address :</b></label>
+                    <textarea class="form-control" id="address" rows="1" formControlName="adress"></textarea>
+                  </div>
+                 
+                </div>
+               
+               
+                <br>
+                
+                
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-success" (click)="onSubmit()" data-dismiss="modal">UPDATE DOCTOR</button>
+              </div>
+              </form>
+            </div>
+            </div>
+          
+          </div>
+        
+      </div>
+    </div>
+    
+      <div class="row">
+        <!-- <h2>Modal Example</h2> -->
+        <!-- Button to Open the Modal -->
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+          Open modal
+        </button> -->
+      
+        <!-- The Modal -->
+        <div class="modal" id="myMod" >
+          <div class="modal-dialog" >
+            <div class="modal-content"style="width: 180% !important;left: 0;">
+            
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title"></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              
+              <!-- Modal body -->
+              <div class="modal-body">
+                <div class="card" style="width: 96%;margin-left: 15px;">
+                  <form>
+                   <br>
+                        <h5>Are you sure you want to delete ?</h5>
+                    
+                  </form>
+               
+                  <br>
+                  <div class="row">
+                      <div class="col-md-6" style="padding-bottom: 10px;">
+                  <button type="submit" class="btn btn-success" style="width: 40%;border-radius: 12px;">Yes</button>
+                </div>
+                <div class="col-md-6" style="padding-bottom: 10px;">
+                  <button type="submit" class="btn btn-success" style="width: 40%;border-radius: 12px;" data-dismiss="modal">Cancel</button>
+                </div>
+                </div>
+                  <br>
+                  <br>
+              </div>
+              </div>
+              
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="modal" id="myModal" >
+          <div class="modal-dialog" >
+            <div class="modal-content"style="width: 200% !important;left: 0;margin-bottom:90px">
+              <div class="modal-header" style="text-align: center;">
+                <h4 class="modal-title" style="font-family: serif;color:white">
+                    
+                  ADD DOCTORS
+                    
+                </h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <form style="padding-left: 10px;padding-right: 40px;" [formGroup]="doctorForm">
+                  <div class="row">
+                    <div class="col">
+                      <label for="exampleFormControlInput1"><b>Doctor Name:</b></label>
+                      <input type="text" class="form-control" id="drname" placeholder=""  formControlName="doc_name">
+                    </div>
+                    <div class="col">
+                      <label for="exampleFormControlInput1"><b>Clinic/Hospital Name :</b></label>
+                      <input type="text" class="form-control" id="drname" placeholder=""  formControlName="clinic_name">
+                    </div>
+
+                   
+                    <div class="col">
+                      <label for="exampleFormControlInput2"><b>Specialist Category:</b></label>
+                      <select class="form-control" id="Specialistcategory" formControlName="speciality">
+                        <option value="ANESTHESIA AND ANALGESIA">ANESTHESIA AND ANALGESIA</option>
+                        <option value="ANIMAL WELFARE">ANIMAL WELFARE</option>
+                        <option value="BEHAVIORAL MEDICINE"> BEHAVIORAL MEDICINE</option>
+                        <option value="CLINICAL PHARMACOLOGY"> CLINICAL PHARMACOLOGY</option>
+                        <option value="DENTISTRY">  DENTISTRY</option>
+                        <option value="DERMATOLOGY"> DERMATOLOGY</option>
+                        <option value="EMERGENCY AND CRITICAL CARE">EMERGENCY AND CRITICAL CARE</option>
+                        <option value="INTERNAL MEDICINE">INTERNAL MEDICINE</option>
+                        <option value="LABORATORY ANIMAL MEDICINE">LABORATORY ANIMAL MEDICINE</option>
+                        <option value="ZOOLOGICAL MEDICINE"> ZOOLOGICAL MEDICINE</option>
+                        <option value="TOXICOLOGY"> TOXICOLOGY</option>
+                        <option value="THERIOGENOLOGY"> THERIOGENOLOGY</option>
+                        <option value="SURGERY"> SURGERY</option>
+                        <option value="SPORTS MEDICINE AND REHABILITATION"> SPORTS MEDICINE AND REHABILITATION</option>
+                        <option value="SPECIES-SPECIALIZED VETERINARY PRACTICE">SPECIES-SPECIALIZED VETERINARY PRACTICE</option>
+                        <option value="RADIOLOGY"> RADIOLOGY</option>
+                        <option value="PREVENTIVE MEDICINE"> PREVENTIVE MEDICINE</option>
+                        <option value="POULTRY VETERINARY MEDICINE"> POULTRY VETERINARY MEDICINE</option>
+                        <option value="MICROBIOLOGY"> PATHOLOGY</option>
+                        <option value="OPHTHALMOLOGY"> OPHTHALMOLOGY</option>
+                        <option value="NUTRITION"> NUTRITION</option>
+                        <option value="MICROBIOLOGY">MICROBIOLOGY</option>
+                      </select>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col">
+                      <label for="exampleFormControlInput1"><b>Type of Medicine:</b></label>
+                    <select class="form-control" id="typeofmedicine" formControlName="medicine_type">
+                      <option value="AYURVEDA">AYURVEDA</option>
+                      <option value="HOMEOPATHY">HOMEOPATHY</option>
+                      <option value="ALOPATHY">ALOPATHY</option>
+                    </select>
+                     </div>
+                   
+                  
+                   
+                    <div class="col">
+                      <label for="exampleFormControlSelect1"><b>Proffessional Membership Details:</b></label>
+                      <textarea class="form-control" id="membership" rows="1" formControlName="memb_details"></textarea>
+                    </div>
+                  </div>
+                  
+                  <br>
+                  <div class="row">
+
+                    <div class="col">
+                      <label for="exampleFormControlSelect1"><b>License Number:</b></label>
+                      <input type="text" class="form-control" id="licenseno" placeholder="" formControlName="licence_number" >
+                    </div>
+                    <div class="col">
+                     
+                    
+                        <label for="exampleFormControlInput3"><b>Gender:</b> </label>
+                        <select class="form-control" id="purpose" formControlName="gender">
+                          <option selected disabled>Select Gender</option>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+    
+                      </select>
+                     
+
+                    </div>
+                   
+                   
+                  </div>
+                  <br>
+                  
+                  <div class="row">
+                    
+                     <div class="col">
+                      <label for="exampleFormControlSelect1"><b>Date of Cetification:</b></label>
+                      <input type="date" class="form-control" id="dateofcertification" placeholder="" formControlName="date_certicialtion" >
+                     
+                    </div>
+                    <div class="col">
+                      <label for="exampleFormControlSelect1"><b>Consulting Fees:</b></label>
+                      <input type="text" class="form-control" id="fees" placeholder="" formControlName="fees">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col">
+                      <label for="exampleFormControlTextarea1"><b>Consulting Days :</b> </label>
+                      <input type="text" class="form-control" id="day" placeholder="" formControlName="consulting_days" >
+                     
+                    </div>
+                    <div class="col">
+                      <label for="exampleFormControlTextarea1"><b>Consulting Time:</b></label>
+                      <input type="time" class="form-control" id="time" placeholder=""  formControlName="consulting_time">
+                    </div>
+                   
+                  </div>
+                 
+                  <br>
+                  <div class="row">
+                    <div class="col">
+                      <label for="exampleFormControlTextarea1"><b>State :</b> </label>
+                    
+                      <select class="form-control" id="typeofmedicine" formControlName="state" (change)="getDistrict($event)">
+                        <option *ngFor="let state of this.States" value="{{state.state_id}}">{{state.state_title}}</option>
+
+                      </select>
+                      
+                     
+                    </div>
+                    <div class="col">
+                      <label for="exampleFormControlTextarea1"><b>Distrct :</b></label>
+                      <select class="form-control" id="typeofmedicine" formControlName="place" >
+                        <option *ngFor="let district of this.District" value="{{district.district_title}}">{{district.district_title}}</option>
+
+                      </select>
+
+                    </div>
+                   
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col">
+                      <label for="exampleFormControlTextarea1"><b>Mobile Number :</b> </label>
+                      <input type="number" class="form-control" id="mobile" placeholder="" formControlName="contact_number" >
+                    </div>
+                    <div class="col">
+                      <label for="exampleFormControlTextarea1"><b>Address :</b></label>
+                      <textarea class="form-control" id="address" rows="1" formControlName="adress"></textarea>
+                    </div>
+                   
+                  </div>
+                 
+                  <br>
+                  
+                  
+                <div class="modal-footer">
+                    <button type="button"  style="width: 127%;background:#3f51b5!important;;"class="btn btn-success" (click)="onSubmit()" data-dismiss="modal">SAVE DOCTOR</button>
+                </div>
+                </form>
+             
+              </div>
+              </div>
+            
+            </div>
+          
+        </div>
+      </div>
+      
+     
+      <div class="row">
+        <!-- <h2>Modal Example</h2> -->
+        <!-- Button to Open the Modal -->
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+          Open modal
+        </button> -->
+      
+        <!-- The Modal -->
+        <div class="modal" id="modal" >
+          <div class="modal-dialog" >
+            <div class="modal-content"style="width: 250% !important;left: 0;margin-bottom:90px">
+            
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Doctor Details</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              
+              <!-- Modal body -->
+              <div class="modal-body">
+               
+                <form style="padding: 20px;">
+                  <!-- <div class="row"> -->
+                    <!-- <div class="col-md-6" style="padding-left: 40px;">
+                      <div class="form-group row">
+                          <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Nick Name:</label>
+                          <div class="col-sm-9">
+                              <p>Tom</p>
+
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Breed:</label>
+                        <div class="col-sm-9">
+                            <p>vvg</p>
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Gender</label>
+                        <div class="col-sm-9">
+                            <p>Male</p>
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Age</label>
+                        <div class="col-sm-9">
+                            <p>3</p>
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Weight</label>
+                        <div class="col-sm-9">
+                            <p>2Kg</p>
+  
+                        </div>
+                      </div>
+
+
+                    </div>
+
+                    <div class="col-md-6" style="padding-left: 40px;">
+                      <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Category :</label>
+                      <div class="col-sm-9">
+                          <p>jvhjh</p>
+
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Purpose</label>
+                        <div class="col-sm-9">
+                            <p>vvg</p>
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Certified or Not</label>
+                        <div class="col-sm-9">
+                            <p>Certified</p>
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Color</label>
+                      <div class="col-sm-9">
+                          <p>white</p>
+
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Description</label>
+                      <div class="col-sm-9">
+                          <p>jhbhjbjhbjhbhjbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+
+                      </div>
+                    </div>
+                    </div>
+                  </div> -->
+
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Doctor Name:</b></label>
+                        <div class="col-sm-9">
+                            <p>{{this.doctorDetils && this.doctorDetils[0]?.doc_name}}</p>
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Type of Medicine:</b></label>
+                        <div class="col-sm-9">
+                            <p>{{this.doctorDetils && this.doctorDetils[0]?.doc_name}}</p>
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Specialist Category:</b></label>
+                        <div class="col-sm-9">
+                            <p>{{this.doctorDetils && this.doctorDetils[0]?.speciality}}</p>
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Date of Cetification:</b></label>
+                        <div class="col-sm-9">
+                            <p>{{this.doctorDetils && this.doctorDetils[0]?.date_certicialtion}}</p>
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Gender:</b></label>
+                        <div class="col-sm-9">
+                            <p>{{this.doctorDetils && this.doctorDetils[0]?.gender}}</p>
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>License Number:</b></label>
+                        <div class="col-sm-9">
+                            <p>{{this.doctorDetils && this.doctorDetils[0]?.licence_number}}</p>
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Proffessional Membership Details:</b></label>
+                        <div class="col-sm-9">
+                          <p>{{this.doctorDetils && this.doctorDetils[0]?.memb_details}}</p>
+                           <!-- <ul class="a">
+                             <li>
+                               giuuih
+                             </li>
+                             <li>
+                              giuuih
+                            </li> <li>
+                              giuuih
+                            </li> <li>
+                              giuuih
+                            </li> <li>
+                              giuuih
+                            </li> <li>
+                              giuuih
+                            </li>
+                           </ul> -->
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Consulting Time:</b></label>
+                        <div class="col-sm-9">
+                            <p>{{this.doctorDetils && this.doctorDetils[0]?.consultation_time}}</p>
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Consulting Days:</b></label>
+                        <div class="col-sm-9">
+                            <p>{{this.doctorDetils && this.doctorDetils[0]?.consulting_days}}</p>
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Consulting Fees:</b></label>
+                        <div class="col-sm-9">
+                            <p>{{this.doctorDetils && this.doctorDetils[0]?.consulting_days}}</p>
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Mobile Number:</b></label>
+                        <div class="col-sm-9">
+                            <p>{{this.doctorDetils && this.doctorDetils[0]?.contact_number}}</p>
+
+                        </div>
+                      </div> 
+                      <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Address:</b></label>
+                        <div class="col-sm-9">
+                            <p style=" max-width:250px;
+                            word-wrap:break-word;">{{this.doctorDetils && this.doctorDetils[0]?.adress}} </p>
+
+                        </div>
+                      </div>
+                     
+                    <div class="modal-footer">
+                      
+                      </div>
+                       
+                  </form>
+              </div>
+              </div>
+              
+              <!-- Modal footer -->
+            
+            </div>
+          
+        </div>
+      </div>
+    </div>
+    </body>
