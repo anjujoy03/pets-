@@ -1,0 +1,61 @@
+
+<!-- <div class="login-div" style="margin-left: 483px;margin-top: 40px;">
+   
+    <div class="title">Login</div>
+    <div class="sub-title"></div>
+    <div class="fields">
+        <form [formGroup]="loginForm" class="box" (ngSubmit)="onSubmit()">
+        <div class="username">
+            <input type="username" class="user-input" placeholder=" Username" formControlName="user_id"/>
+        </div>
+        <div class="password">
+            <input type="password" class="pass-input" placeholder="Password" id="newpass" formControlName="password"/>
+        </div>
+      
+        <button class="signin-button">Login</button>
+        </form>
+    </div>
+ 
+</div> -->
+
+
+<div class="container">
+
+    <div class="wrapper">
+      <div class="title"><span>PETS </span></div>
+      <form [formGroup]="loginForm" class="box" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <i ><img src="../../assets/img/profile-user.png" width="20px" height="20px"></i>
+         
+          <input type="username" class="user-input" placeholder=" Username" formControlName="user_id" [ngClass]="{ 'has-error': isSubmitted && f.user_id.errors }"/>
+          <div *ngIf="isSubmitted && f.user_id.errors" class="help-block">
+            <div *ngIf="f.user_id.errors.required">User Id is required</div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <i ><img src="../../assets/img/lock.png" width="20px" height="20px"></i>
+          <input type="password" class="pass-input" placeholder="Password" id="newpass" formControlName="password" [ngClass]="{ 'has-error': isSubmitted && f.password.errors }"/>
+          <div *ngIf="isSubmitted && f.password.errors" class="help-block">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
+        </div>
+        <br>
+
+        <div *ngIf="this.Message" class="help-block">
+          <div >{{this.Message}}!</div>
+        </div>
+        <br>
+        <!-- <div class="pass"><a href="#">Forgot password?</a></div> -->
+        <div class="row button">
+          <input type="submit" value="Login">
+          
+        </div>
+        <!-- <div class="signup-link">Not a member? <a href="#">Signup now</a></div> -->
+      </form>
+    </div>
+  </div>
+
+
+
+
