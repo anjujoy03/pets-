@@ -152,7 +152,7 @@ if(place =='all'){
     user_id:[],
     image:[],
     type:[],
-    shop_id:[],
+    shop_id:[localStorage.getItem('user_id')],
     shop_internalid:[localStorage.getItem('user_id')]
 
 

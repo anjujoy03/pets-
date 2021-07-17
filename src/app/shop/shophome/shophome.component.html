@@ -178,19 +178,19 @@
           <div class="row" style="padding-top: 120px;padding-bottom: 180px;background-color: #5e72e4;">
             <div class="col" style="margin-bottom: 41px !important;">
               <div class="card" style="width: 86%;height: 107%;/* background: #3f51b5 !important; */color: white;/* background: linear-gradient(45deg, #3f51b5, #00bcd4); */background: linear-gradient(to right,#3f51b5, #00bcd4);"><h5 _ngcontent-kxg-c94="" style="margin-top: 30px; padding-bottom: 8px;">TOTAL PRODUCT</h5>
-                <span>{{this.TotalProdcut &&this.TotalProdcut[0]?.productcount }} &nbsp;&nbsp; <i class="fas fa-drumstick-bite" style="font-size: 20px;"></i> </span>
+                <span>{{this.TotalProdcut &&this.TotalProdcut[0]?.productcount }} &nbsp;&nbsp; <mat-icon style="font-size: 20px;">library_books</mat-icon> </span>
               </div>
             </div>
             <div class="col" style="margin-bottom: 41px !important;">
    <div class="card" style="width: 86%;height: 107%;/* background: #3f51b5 !important; */color: white;/* background: linear-gradient(45deg, #ffa722, #5f6fa700); */background: linear-gradient(to right,#4caf50, #aac788);">
                 <h5 style="margin-top: 30px;padding-bottom: 8px;">TOTAL CUSTOMERS</h5>
-                <span>{{this.UserList && this.UserList[0]?.user_count}} &nbsp;&nbsp; <i class="fas fa-users" style="font-size: 20px;"></i></span>
+                <span>{{this.UserList && this.UserList[0]?.user_count}} &nbsp;&nbsp; <mat-icon style="font-size: 20px;">supervisor_account</mat-icon></span>
               </div>
             </div>
             <div class="col " style="margin-bottom: 41px !important;">
  <div class="card" style="width: 86%;height: 107%;/* background: #3f51b5 !important; */color: white;/* background: linear-gradient(45deg, #ffa722, #5f6fa700); */background: linear-gradient(to right,#ff5722, #b59393);">
                 <h5 style="margin-top: 30px;padding-bottom: 8px;">TOTAL ORDERS </h5>
-                <span>{{this.order &&this.order[0]?.order_count }} &nbsp;&nbsp; <i class="fas fa-shopping-cart" style="font-size: 20px;"></i></span>
+                <span>{{this.order &&this.order[0]?.order_count }} &nbsp;&nbsp;<mat-icon style="font-size: 20px;">shopping_cart</mat-icon> </span>
               </div>
             </div>
             <!-- <div class="col" style="margin-bottom: 41px !important;">
@@ -282,7 +282,7 @@
       <th scope="col">USER ID</th>
       <th scope="col">NAME</th>
       <th scope="col">CONTACT NUMBER</th>
-      <th scope="col">ACTION</th>
+      <th scope="col">STATUS</th>
     </tr>
   </thead>
   <tbody>
@@ -347,7 +347,7 @@
         <div class="row" id="trendrow" >
           <br>
           <br>
-          <h6 style="padding-left: 25px;margin-top: 30px;margin-bottom: 60px;font-size: 20px;">Recentely Added Products</h6>
+          <h6 style="padding-left: 25px;margin-top: 30px;margin-bottom: 60px;font-size: 20px;">RECENTLY ADDED PRODUCTS</h6>
           
         </div>
   
@@ -406,7 +406,7 @@
 <th scope="row">{{user['order_status']}}</th>
 <td>{{user['order_no']}}</td>
 <td>{{user['user_id']}}</td>
-<td><span *ngFor="let item of user['image']"><img src="http://ec2-65-2-121-70.ap-south-1.compute.amazonaws.com{{user['image']?.split(',')}}" width="30px" height="30px"></span></td>
+<td>{{user['category_name']}}</td>
 <td>{{user['category']}} </td>
 <td>{{user['order_amount']}} </td>
 </tr>
