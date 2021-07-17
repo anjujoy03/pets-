@@ -11,7 +11,7 @@
         [style.height.px]="menu.active ? submenu.scrollHeight : 0">
         <li *ngFor="let submenu of menu.submenu">
        
-          <a [href]="submenu.url">   <img [src]="submenu.icon"style="width: 16px;margin-right: 10px"><span [ngStyle]="{'color':menu.active ?'red':'black'}">{{ submenu.name }}</span></a>
+          <a [href]="submenu.url">   <img [src]="submenu.icon"style="width: 16px;margin-right: 10px"><span [ngStyle]="{'color':menu.active ?'grey':'black'}">{{ submenu.name }}</span></a>
         </li>
       </ul>
     </li>

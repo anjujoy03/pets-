@@ -58,7 +58,7 @@ export class ShophomeComponent implements OnInit {
       iconClass: '../../../assets/img/product.png',
       active: false,
       submenu: [
-        { name: 'Shop', url: 'shop/pet' ,icon:''},
+        { name: 'Manage Products', url: 'shop/pet' ,icon:''},
 
        
 
@@ -86,15 +86,15 @@ export class ShophomeComponent implements OnInit {
        
       ]
     },
-    { 
-      name: 'Reports',
-      iconClass: '../../../assets/img/categories.png',
-      active: false,
-      submenu: [
-        { name: 'Sales Report', url: 'shop/shophome' ,icon:''},
+    // { 
+    //   name: 'Reports',
+    //   iconClass: '../../../assets/img/categories.png',
+    //   active: false,
+    //   submenu: [
+    //     { name: 'Sales Report', url: 'shop/shophome' ,icon:''},
 
-      ]
-    },
+    //   ]
+    // },
 
    
   ];
