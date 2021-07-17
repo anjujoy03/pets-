@@ -976,9 +976,14 @@ top: 10px;
 bottom: 0;
 left: 230px;
 }
-.modal-header{
-background: #3f51b5!important;
+.modal-title{
+color: black !important;
 }
+
+.col label{
+    font-weight:normal !important;
+    color: black;
+  }
 .top_navbar
 {
  
@@ -1005,3 +1010,35 @@ background: #3f51b5!important;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#footbtn{
+  color: #fff;
+  background-color: #2dce89;
+  border-color: #2dce89;
+  box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+}
+#footbtn:hover {
+  box-shadow: 0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+  transform: translateY(-1px);
+}
+#footbtn:hover {
+  color: #fff;
+  background-color: #2dce89;
+  border-color: #2dce89;
+}
+#footclose {
+  color: #212529;
+  background-color: #f7fafc;
+  border-color: #f7fafc;
+  box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+}
+#footclose:hover {
+  box-shadow: 0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+  transform: translateY(-1px);
+}
+#footclose:hover {
+  color: #212529;
+  background-color: #f7fafc;
+  border-color: #f7fafc;
+  
+}

@@ -368,31 +368,31 @@
     <div class="row">
       <div class="modal" id="myModa" >
         <div class="modal-dialog" >
-          <div class="modal-content"style="width: 200% !important;left: 0;margin-bottom:90px">
+          <div class="modal-content"style="width: 200% !important;left: 69px;margin-bottom:90px">
             <div class="modal-header">
               <h4 class="modal-title">
                   
-                Update Trainer Details
+                UPDATE TRAINER DETAILS
                   
               </h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            
             </div>
             <div class="modal-body">
               <form style="padding-left: 10px;padding-right: 40px;"  [formGroup]="trainerForm">
                 <div class="row">
                   <div class="col">
-                    <label for="exampleFormControlInput1"><b>Trainer Name:</b></label>
+                    <label for="exampleFormControlInput1">Trainer Name:</label>
                     <input type="text" class="form-control" id="drname" placeholder=""  formControlName="trainer_name">
                   </div>
                   <div class="col">
-                      <label for="exampleFormControlSelect1"><b>Specialist Category:</b></label>
+                      <label for="exampleFormControlSelect1">Specialist Category:</label>
                       <textarea class="form-control" id="membership" rows="1" formControlName="trainer_services"></textarea>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col">
-                    <label for="exampleFormControlInput3"><b>Gender:</b> </label>
+                    <label for="exampleFormControlInput3">Gender: </label>
                     <select class="form-control" id="purpose" formControlName="gender">
                       <option selected disabled>Select Gender</option>
                       <option value="male">Male</option>
@@ -403,11 +403,11 @@
                   </div>
                  <br>
                      <div class="col">
-                      <label for="exampleFormControlSelect1"><b>Consulting Fees:</b></label>
+                      <label for="exampleFormControlSelect1">Consulting Fees:</label>
                       <input type="text" class="form-control" id="fees" placeholder="" formControlName="fess" >
                     </div>
                   <!-- <div class="col">
-                    <label for="exampleFormControlSelect1"><b>Proffessional Membership Details:</b></label>
+                    <label for="exampleFormControlSelect1">Proffessional Membership Details:</label>
                     <textarea class="form-control" id="membership" rows="1"formControlName="membership"></textarea>
                   </div> -->
               
@@ -420,12 +420,12 @@
               
                     
                     <div class="col">
-                      <label for="exampleFormControlTextarea1"><b>Consulting Days :</b> </label>
+                      <label for="exampleFormControlTextarea1">Consulting Days : </label>
                       <input type="text" class="form-control" id="day" placeholder="" formControlName="consulting_days">
                      
                     </div>
                        <div class="col">
-                    <label for="exampleFormControlTextarea1"><b>Consulting Time:</b></label>
+                    <label for="exampleFormControlTextarea1">Consulting Time:</label>
                     <input type="time" class="form-control" id="time" placeholder="" formControlName="consulting_time" >
                   </div>
                  
@@ -438,11 +438,11 @@
                  
                
                   <div class="col">
-                      <label for="exampleFormControlTextarea1"><b>Mobile Number :</b> </label>
+                      <label for="exampleFormControlTextarea1">Mobile Number : </label>
                       <input type="number" class="form-control" id="mobile" placeholder="" formControlName="contact_number" >
                     </div>
                        <div class="col">
-                      <label for="exampleFormControlTextarea1"><b>Email :</b> </label>
+                      <label for="exampleFormControlTextarea1">Email : </label>
                       <input type="email" class="form-control" id="mobile" placeholder="" formControlName="email" >
                     </div>
                  
@@ -450,7 +450,7 @@
 <br>
                 <div class="row">
                   <div class="col">
-                    <label for="exampleFormControlTextarea1"><b>State :</b> </label>
+                    <label for="exampleFormControlTextarea1">State : </label>
                   
                     <select class="form-control" id="typeofmedicine" formControlName="trainer_state" (change)="getDistrict($event)">
                       <option *ngFor="let state of this.States" value="{{state.state_id}}">{{state.state_title}}</option>
@@ -460,7 +460,7 @@
                    
                   </div>
                   <div class="col">
-                    <label for="exampleFormControlTextarea1"><b>Distrct :</b></label>
+                    <label for="exampleFormControlTextarea1">Distrct :</label>
                     <select class="form-control" id="typeofmedicine" formControlName="trainer_district" >
                       <option *ngFor="let district of this.District" value="{{district.district_title}}">{{district.district_title}}</option>
 
@@ -474,11 +474,11 @@
                 <div class="row">
                  
                   <div class="col">
-                    <label for="exampleFormControlTextarea1"><b>Place :</b></label>
+                    <label for="exampleFormControlTextarea1">Place :</label>
                     <textarea class="form-control" id="address" rows="1" formControlName="trainer_place"></textarea>
                   </div>
                      <div class="col">
-                    <label for="exampleFormControlTextarea1"><b>Address :</b></label>
+                    <label for="exampleFormControlTextarea1">Address :</label>
                     <textarea class="form-control" id="address" rows="1" formControlName="trainer_adress"></textarea>
                   </div>
                  
@@ -490,7 +490,8 @@
                 
                 
               <div class="modal-footer">
-                <button type="button"  style="width: 127%;background:#3f51b5!important;;"class="btn btn-success" (click)="onSubmit()" data-dismiss="modal">ADD TRAINER</button>
+                <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CLOSE</button>
+                <button type="button" id="footbtn" class="btn btn-success" (click)="onSubmit()" data-dismiss="modal">ADD TRAINER</button>
               </div>
               </form>
             </div>
@@ -554,24 +555,24 @@
       <div class="row">
         <div class="modal" id="myModal" >
           <div class="modal-dialog" >
-            <div class="modal-content"style="width: 200% !important;left: 0;margin-bottom:90px">
+            <div class="modal-content"style="width: 200% !important;left: 69px;margin-bottom:90px">
               <div class="modal-header">
                 <h4 class="modal-title" style="color: white;">
                     
                   ADD TRAINER
                     
                 </h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+     
               </div>
               <div class="modal-body">
                 <form style="padding-left: 10px;padding-right: 40px;"  [formGroup]="trainerForm">
                   <div class="row">
                     <div class="col">
-                      <label for="exampleFormControlInput1"><b>Trainer Name:</b></label>
+                      <label for="exampleFormControlInput1">Trainer Name:</label>
                       <input type="text" class="form-control" id="drname" placeholder=""  formControlName="trainer_name">
                     </div>
                     <div class="col">
-                        <label for="exampleFormControlSelect1"><b>Specialist Category:</b></label>
+                        <label for="exampleFormControlSelect1">Specialist Category:</label>
                         <textarea class="form-control" id="membership" rows="1" formControlName="trainer_services"></textarea>
                       </div>
                   </div>
@@ -579,7 +580,7 @@
                   <div class="row">
                     <div class="col">
                      
-                        <label for="exampleFormControlInput3"><b>Gender:</b> </label>
+                        <label for="exampleFormControlInput3">Gender: </label>
                         <select class="form-control" id="purpose" formControlName="gender">
                           <option selected disabled>Select Gender</option>
                           <option value="male">Male</option>
@@ -590,7 +591,7 @@
                     </div>
                    <br>
                     <div class="col">
-                      <label for="exampleFormControlSelect1"><b>Proffessional Membership Details:</b></label>
+                      <label for="exampleFormControlSelect1">Proffessional Membership Details:</label>
                       <textarea class="form-control" id="membership" rows="1"formControlName="membership"></textarea>
                     </div>
                 
@@ -601,12 +602,12 @@
 
                   <div class="row">
                     <div class="col">
-                        <label for="exampleFormControlSelect1"><b>Consulting Fees:</b></label>
+                        <label for="exampleFormControlSelect1">Consulting Fees:</label>
                         <input type="text" class="form-control" id="fees" placeholder="" formControlName="fess" >
                       </div>
                       
                       <div class="col">
-                        <label for="exampleFormControlTextarea1"><b>Consulting Days :</b> </label>
+                        <label for="exampleFormControlTextarea1">Consulting Days : </label>
                         <input type="text" class="form-control" id="day" placeholder="" formControlName="consulting_days">
                        
                       </div>
@@ -619,11 +620,11 @@
                   <div class="row">
                    
                     <div class="col">
-                      <label for="exampleFormControlTextarea1"><b>Consulting Time:</b></label>
+                      <label for="exampleFormControlTextarea1">Consulting Time:</label>
                       <input type="time" class="form-control" id="time" placeholder="" formControlName="consulting_time">
                     </div>
                     <div class="col">
-                        <label for="exampleFormControlTextarea1"><b>Mobile Number :</b> </label>
+                        <label for="exampleFormControlTextarea1">Mobile Number : </label>
                         <input type="number" class="form-control" id="mobile" placeholder="" formControlName="contact_number" >
                       </div>
                    
@@ -631,7 +632,7 @@
 
                   <div class="row">
                     <div class="col">
-                      <label for="exampleFormControlTextarea1"><b>State :</b> </label>
+                      <label for="exampleFormControlTextarea1">State : </label>
                     
                       <select class="form-control" id="typeofmedicine" formControlName="trainer_state" (change)="getDistrict($event)">
                         <option *ngFor="let state of this.States" value="{{state.state_id}}">{{state.state_title}}</option>
@@ -641,7 +642,7 @@
                      
                     </div>
                     <div class="col">
-                      <label for="exampleFormControlTextarea1"><b>Distrct :</b></label>
+                      <label for="exampleFormControlTextarea1">Distrct :</label>
                       <select class="form-control" id="typeofmedicine" formControlName="trainer_district" >
                         <option *ngFor="let district of this.District" value="{{district.district_title}}">{{district.district_title}}</option>
 
@@ -655,7 +656,7 @@
                   <div class="row">
                    
                     <div class="col">
-                      <label for="exampleFormControlTextarea1"><b>Place :</b></label>
+                      <label for="exampleFormControlTextarea1">Place :</label>
                       <textarea class="form-control" id="address" rows="1" formControlName="trainer_place"></textarea>
                     </div>
                    
@@ -665,7 +666,7 @@
                   <div class="row">
                    
                     <div class="col">
-                      <label for="exampleFormControlTextarea1"><b>Address :</b></label>
+                      <label for="exampleFormControlTextarea1">Address :</label>
                       <textarea class="form-control" id="address" rows="1" formControlName="trainer_adress"></textarea>
                     </div>
                    
@@ -675,7 +676,8 @@
                   
                   
                 <div class="modal-footer">
-                  <button type="button"  style="width: 127%;background:#3f51b5!important;;"class="btn btn-success" (click)="onSubmit()" data-dismiss="modal">ADD TRAINER</button>
+                  <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CLOSE</button>
+                  <button type="button" id="footbtn" class="btn btn-success" (click)="onSubmit()" data-dismiss="modal">ADD TRAINER</button>
                 </div>
                 </form>
              
@@ -712,14 +714,14 @@
                 <!-- <form style="padding: 20px;">
                  
                       <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Trainer Name:</b></label>
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Trainer Name:</label>
                         <div class="col-sm-9">
                             <p>{{TrainerDetils&&TrainerDetils[0]?.trainer_name}}</p>
 
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Specialist Category:</b></label>
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Specialist Category:</label>
                         <div class="col-sm-9">
                             <p>{{TrainerDetils&&TrainerDetils[0]?.trainer_services}}</p>
 
@@ -727,7 +729,7 @@
                       </div>
                      
                       <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Gender:</b></label>
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Gender:</label>
                         <div class="col-sm-9">
                             <p>{{TrainerDetils&&TrainerDetils[0]?.gender}}</p>
 
@@ -738,21 +740,21 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Consulting Fees:</b></label>
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Consulting Fees:</label>
                         <div class="col-sm-9">
                             <p>{{TrainerDetils&&TrainerDetils[0]?.fess}}</p>
 
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Consulting Days </b></label>
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Consulting Days </label>
                         <div class="col-sm-9">
                             <p>{{TrainerDetils[0]?.consulting_days}}</p>
 
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Consulting Time </b></label>
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Consulting Time </label>
                         <div class="col-sm-9">
                             <p>{{TrainerDetils[0]?.time}}</p>
 
@@ -760,14 +762,14 @@
                       </div>
                      
                       <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Mobile Number:</b></label>
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Mobile Number:</label>
                         <div class="col-sm-9">
                             <p>{{TrainerDetils[0]?.contact_number}}</p>
 
                         </div>
                       </div> 
                       <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Address:</b></label>
+                        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Address:</label>
                         <div class="col-sm-9">
                             <p style=" max-width:250px;
                             word-wrap:break-word;">{{TrainerDetils[0]?.trainer_adress}}</p>
