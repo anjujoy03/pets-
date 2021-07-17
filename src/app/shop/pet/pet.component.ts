@@ -98,12 +98,22 @@ export class PetComponent implements OnInit {
   ];
   filter(place:any){
     this.isfilter=!this.isfilter;
-   
+
+
+if(place =='all'){
+  this.pagedItems= this.petList.filter((obj:any)=>{
+  return obj
+
+  })
+
+}
+   else{
     this.pagedItems= this.petList.filter((obj:any)=>{
       console.log(obj)
       return obj.category==place;
 
     })
+  }
     
   }
   filterdropdown(){

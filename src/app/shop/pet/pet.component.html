@@ -217,9 +217,10 @@
           top: 41px;
           left: 95px;
           z-index: 1000;" *ngIf="this.isfilter" >
-            <mat-list-item role="listitem" (click)="filter('food')" style="border-bottom: 1px solid grey">food</mat-list-item>
-            <mat-list-item role="listitem" (click)="filter('toy')" style="border-bottom: 1px solid grey">toy</mat-list-item>
-            <mat-list-item role="listitem" (click)="filter('pet')" style="border-bottom: 1px solid grey">pet</mat-list-item>
+          <mat-list-item role="listitem" (click)="filter('all')" style="border-bottom: 1px solid grey">ALL</mat-list-item>
+            <mat-list-item role="listitem" (click)="filter('food')" style="border-bottom: 1px solid grey">FOOD</mat-list-item>
+            <mat-list-item role="listitem" (click)="filter('toy')" style="border-bottom: 1px solid grey">TOY</mat-list-item>
+            <mat-list-item role="listitem" (click)="filter('pet')" style="border-bottom: 1px solid grey">PET</mat-list-item>
             <!-- <mat-list-item role="listitem"><mat-icon style="color:rgb(168, 67, 67);font-size: 18px;">settings</mat-icon>Settings</mat-list-item> -->
             
     
@@ -265,7 +266,7 @@
                 </thead>
                 <tbody>
 
-                  <ng-container *ngFor="let doc of this.petList">
+                  <ng-container *ngFor="let doc of   this.pagedItems">
                     <tr (click)="doc.expanded=!doc.expanded">
                       <td>{{doc['shop_dtls_id']}}</td>
                       <td>{{doc['category_name']}}</td>
@@ -901,9 +902,25 @@
                           <label for="exampleFormControlSelect1"><b>BREED NAME:</b></label>
                           <select class="form-control" id="breed" formControlName="breed_name">
                             <option selected disabled>SELECT BREED</option>
-                            <option></option>
-                            <option></option>
-                            <option></option>
+                            <option>SIAESE</option>
+                            <option>PERSIAN</option>
+                            <option>MAIN GOON</option>
+                            <option>RAGDOLL</option>
+                            <option>BENGAL</option>
+                            <option>ABYSINIAN</option>
+                            <option>BIRMAN</option>
+                            <option>LABARDOR RETRIVER</option>
+                            <option>GERMAN SHEPERD</option>
+                            <option>BULLDOG</option>
+                            <option>POODLE</option>
+                            <option>DOBERMAN</option>
+                            <option>PUG</option>
+                            <option>BETTA</option>
+                            <option>GOLDFISH</option>
+                            <option>ANGEL FISH</option>
+                            <option>CAT FISH</option>
+                            <option>GUPPIES</option>
+                            <option>MOLLIES</option>
                           </select>
                         </div>
                         <div class="col">
