@@ -177,7 +177,7 @@
       <div class="col-md-6">
       <nav aria-label="breadcrumb"style="padding-left: 21px;" >
         <ol class="breadcrumb"style="width: 50%; box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);" >
-          <li class="breadcrumb-item" ><a href="home" style="color: black !important;">Home &nbsp;<mat-icon style="font-size: 15px;">home</mat-icon></a></li>
+          <li class="breadcrumb-item" ><a href="shop/shophome" style="color: black !important;">Home &nbsp;<mat-icon style="font-size: 15px;">home</mat-icon></a></li>
           <li class="breadcrumb-item active" aria-current="page" style="text-decoration: none;cursor: initial;">Profile  &nbsp;<mat-icon >person</mat-icon></li>
         </ol>
       </nav> 
@@ -273,42 +273,51 @@
     <div class="row">
       <div class="modal" id="myMo" >
         <div class="modal-dialog" id="add" >
-          <div class="modal-content"style="width: 100% !important;left: 344px;margin-bottom:90px">
+          <div class="modal-content"style="width: 150% !important;left: 160px;margin-bottom:90px">
           
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title">Edit About Us</h4>
+              <h4 class="modal-title">EDIT PROFILE</h4>
              
             </div>
             
             <!-- Modal body -->
             <div class="modal-body">
             
-                <form   style="padding: 10px;"  [formGroup]="ShopForm">
-                  <div class="form-row">
+                <form   style="padding-right: 40px;padding-left: 40px;"  [formGroup]="ShopForm">
+                  <div class="row">
+                    <div class="col">
+
+                  
                           <label for="inputPassword4">Company Name</label>
                           <input type="text" class="form-control" id="inputPassword4" placeholder="" formControlName="shop_name">
-                  </div> 
-                  <div class="form-row">
-                      <div class="form-group col-md-6">
+                    </div> 
+               
+               
+                      <div class="col">
                         <label for="inputPassword4">Phone No 1</label>
                         <input type="number" class="form-control" id="inputPassword4" placeholder="" formControlName="phone_number">
                        </div>
                   </div>
-                  <div class="form-group">
+                  <br>
+                  <div class="row">
+                    <div class="col">
                     <label for="inputAddress"> Address</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" formControlName="shop_address"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="shop_address"></textarea>
                   </div>
-                  <div class="form-group">
+                  <div class="col">
                     <label for="inputAddress"> Location</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" formControlName="shop_place"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="shop_place"></textarea>
                   </div>
+                  </div>
+                  <br>
                  
-                    <div class="form-group">
+                    <div class="row">
+                      <div class="col">
                       <input type="file" formControlName="image" class="uploadFile img" value="Upload Photo"  (change)="onChange($event)" style="overflow: hidden;">
-                              
-                        </div>
-               
+                       </div>       
+                    </div>
+                    <br>
                  
                   
                   
@@ -318,7 +327,7 @@
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CLOSE</button>
-              <button type="button" id="footbtn"  class="btn btn-success" (click)="onSubmit()" data-dismiss="modal"  >Update</button>
+              <button type="button" id="footbtn"  class="btn btn-success" (click)="onSubmit()" data-dismiss="modal"  >UPDATE</button>
               
             </div>
             
