@@ -5,7 +5,7 @@
         <img [src]="menu.iconClass" style="width: 16px;margin-right: 10px">
         <!-- <i [class]="menu.iconClass"></i> -->
         <span>{{ menu.name }}</span>
-        <i class="fa fa-chevron-down"></i>
+        <mat-icon>keyboard_arrow_down</mat-icon>
       </div>
       <ul class="submenu" #submenu 
         [style.height.px]="menu.active ? submenu.scrollHeight : 0">

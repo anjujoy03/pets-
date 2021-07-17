@@ -144,7 +144,8 @@
                   <!-- <span class="icon shadow-lg"><i class="fas fa-profile" data-toggle="tooltip" data-placement="top" title="Logout" style="color: white;text-shadow: 0 0 black"></i></span> -->
                   <!-- <mat-icon   style="color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);font-size: 31px;">account_circle</mat-icon> -->
                   <mat-icon  style="cursor:pointer;" *ngIf="logactive"  style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle{{UserId}}</mat-icon>
-                  <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>&nbsp;&nbsp;<span style="color:white">{{UserId}}</span>
+                  <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>&nbsp;&nbsp;<span style="color:white;position: absolute;left: 66px;
+                  top: 2px;">{{UserId}}</span>
                     
                     <mat-list role="list" *ngIf="logactive">
                       <mat-list-item role="listitem"><mat-icon style="color: darkcyan;font-size: 18px;">perm_identity</mat-icon>{{UserId}}</mat-list-item>
@@ -274,10 +275,10 @@
                                     background:none;
                                     border: none;" type="button" data-toggle="tooltip" data-placement="top"
                                                             title="View"
-                                                            (click)="viewDetails(doc['shop_id'],doc,'eye')"><i
-                                                                *ngIf="doc.expanded" class="fa fa-eye"></i><i
+                                                            (click)="viewDetails(doc['shop_id'],doc,'eye')"><mat-icon
+                                                                *ngIf="doc.expanded">visibility</mat-icon><mat-icon
                                                                 *ngIf="!doc.expanded"
-                                                                class="fa fa-eye-slash"></i></button>
+                                                                >visibility_off</mat-icon></button>
                                                     </li>
 
                                                     <li class="list-inline-item"
@@ -285,17 +286,17 @@
                                                         <button class="btn btn-success btn-sm rounded-0" style="color: #3a9834;
                                 background:none;
                                 border: none;" type="button" data-toggle="tooltip" data-placement="top" title="Update"
-                                                            (click)="viewDetails(doc['shop_id'],doc,'edit')"><i
-                                                                class="fa fa-edit" data-toggle="modal"
-                                                                data-target="#myModa"></i></button>
+                                                            (click)="viewDetails(doc['shop_id'],doc,'edit')"><mat-icon
+                                                                data-toggle="modal"
+                                                                data-target="#myModa">create</mat-icon></button>
                                                     </li>
                                                     <li class="list-inline-item"
                                                         style="padding-right: 20px;padding-bottom: 10px;">
                                                         <button class="btn btn-danger btn-sm rounded-0" style="background: none;
                                 border: none;
                                 color: #c33737;" type="button" data-toggle="tooltip" data-placement="top"
-                                                            title="Delete" (click)="DeleteShop(doc['shop_id'])"><i
-                                                                class="fa fa-trash"></i></button>
+                                                            title="Delete" (click)="DeleteShop(doc['shop_id'])"><mat-icon
+                                                                >delete</mat-icon></button>
                                                     </li>
 
                                                 </ul>

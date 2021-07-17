@@ -126,6 +126,7 @@ export class DoctorComponent implements OnInit {
         doc_id:[''],
         state:[''],
         clinic_name:[''],
+        image:[''],
   
 
         user_id:[localStorage.getItem('user_id')],
@@ -149,9 +150,46 @@ export class DoctorComponent implements OnInit {
      });
   }
 
-  onSubmit() {
+  onChange(event:any){
+    if(event.target.files.length>0){
+      const file=event.target.files[0];
+      this.myFiles.push(file)
+    }
+  }
 
-      this.http.post(environment.apiUrl + '/apiadd_doctor',this.doctorForm.value).subscribe((response:any) => {
+  onSubmit() {
+         
+    var formData = new FormData();
+   
+    for(let i=0;i<this.myFiles.length;i++){
+      console.log(this.myFiles[i])
+      formData.append('myfile',this.myFiles[i])
+    }
+    formData.append('adress',this.doctorForm.controls['adress'].value)
+    formData.append('consultation_time',this.doctorForm.controls['consultation_time'].value)
+    formData.append('doc_name',this.doctorForm.controls['doc_name'].value)
+    formData.append('place',this.doctorForm.controls['place'].value)
+    formData.append('medicine_type',this.doctorForm.controls['medicine_type'].value)
+    formData.append('memb_details',this.doctorForm.controls['memb_details'].value)
+    formData.append('licence_number',this.doctorForm.controls['licence_number'].value)
+    formData.append('date_certicialtion',this.doctorForm.controls['date_certicialtion'].value)
+    formData.append('doc_no',this.doctorForm.controls['doc_no'].value)
+    formData.append('consulting_days',this.doctorForm.controls['consulting_days'].value)
+    formData.append('consulting_time',this.doctorForm.controls['consulting_time'].value)
+    formData.append('contact_number',this.doctorForm.controls['contact_number'].value)
+    formData.append('speciality',this.doctorForm.controls['speciality'].value)
+    formData.append('gender',this.doctorForm.controls['gender'].value)
+    formData.append('fees',this.doctorForm.controls['fees'].value)
+    formData.append('doc_id',this.doctorForm.controls['doc_id'].value)
+    
+    formData.append('state',this.doctorForm.controls['state'].value)
+    
+    formData.append('clinic_name',this.doctorForm.controls['clinic_name'].value)
+    
+    formData.append('image',this.doctorForm.controls['image'].value)
+    formData.append('user_id',this.doctorForm.controls['user_id'].value)
+
+      this.http.post(environment.apiUrl + '/apiadd_doctor',formData).subscribe((response:any) => {
       
         if(response['status'] =='SUCCESS'){
           window.location.reload();

@@ -16,7 +16,8 @@ import {PagerService}    from './../_services/pager.service';
 import {DatePipe} from '@angular/common';
 import { AdmiaccordianComponent } from './admiaccordian/admiaccordian.component';
 import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list'
+import {MatListModule} from '@angular/material/list';
+
 
 
 @NgModule({

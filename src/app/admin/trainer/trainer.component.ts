@@ -134,7 +134,8 @@ export class TrainerComponent implements OnInit {
         consulting_days: ['',],
         membership:['',],
         user_id:[localStorage.getItem('user_id')],
-        trainer_id:['',]
+        trainer_id:['',],
+        image:[]
        });
    this.getAlltriuners()
    this.getStates();
@@ -235,8 +236,19 @@ export class TrainerComponent implements OnInit {
     console.log(this.pagedItems);
   }
 
+  onChange(event:any){
+    if(event.target.files.length>0){
+      const file=event.target.files[0];
+      this.myFiles.push(file)
+    }
+  }
+
   onSubmit() {
       var formData = new FormData();
+      for(let i=0;i<this.myFiles.length;i++){
+        console.log(this.myFiles[i])
+        formData.append('myfile',this.myFiles[i])
+      }
       formData.append('trainer_name',this.trainerForm.controls['trainer_name'].value)
        formData.append('trainer_adress',this.trainerForm.controls['trainer_adress'].value)
        formData.append('trainer_district',this.trainerForm.controls['trainer_district'].value)

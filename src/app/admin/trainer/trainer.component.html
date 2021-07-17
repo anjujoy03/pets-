@@ -145,7 +145,8 @@
                   <!-- <mat-icon   style="color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);font-size: 31px;">account_circle</mat-icon> -->
                   <!-- <mat-icon style="color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);font-size: 31px;">account_circle</mat-icon> -->
                   <mat-icon  style="cursor:pointer;" *ngIf="logactive"  style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>
-                      <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>&nbsp;&nbsp;<span style="color:white">{{UserId}}</span>
+                      <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>&nbsp;&nbsp;<span style="color:white;position: absolute;left: 66px;
+                      top: 2px;">{{UserId}}</span>
                         
                       <mat-list role="list" *ngIf="logactive">
                         <mat-list-item role="listitem"><mat-icon style="color: darkcyan;font-size: 18px;">perm_identity</mat-icon>{{UserId}}</mat-list-item>
@@ -177,9 +178,9 @@
 <div class="row" style="padding-bottom: 0px;background-color: #5e72e4;margin-top: -20px;padding-top: 100px;">
   <div class="col-md-8">
   <nav aria-label="breadcrumb"style="padding-left: 21px;" >
-    <ol class="breadcrumb"style="width: 50%; box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);" >
-      <li class="breadcrumb-item" ><a href="home" style="color: black !important;">Home &nbsp;<i class="fas fa-home"></i></a></li>
-      <li class="breadcrumb-item active" aria-current="page" style="text-decoration: none;cursor: initial;">Trainers  &nbsp;<i class="fa fa-user" aria-hidden="true"></i></li>
+    <ol class="breadcrumb"style="width: 31%; box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);" >
+      <li class="breadcrumb-item" ><a href="home" style="color: black !important;">Home &nbsp;<mat-icon style="font-size: 15px;">home</mat-icon></a></li>
+      <li class="breadcrumb-item active" aria-current="page" style="text-decoration: none;cursor: initial;">Trainers  &nbsp;<mat-icon>person</mat-icon></li>
     </ol>
   </nav> 
   </div>
@@ -188,14 +189,14 @@
        
     </div> -->
     <div class="col-md-4">
-
+<!-- 
       <button type="button"  (click)="filterdropdown()" class="btn btn-success addbutton"style=" margin-left: 20px;">Filter</button> 
-      <mat-list role="list" style="margin-top: 43px;"  *ngIf="this.isfilter" >
+      <mat-list role="list" style="margin-top: 43px;z-index: 1000;"  *ngIf="this.isfilter" >
         <mat-list-item role="listitem" (click)="filter(item['trainer_district'])" style="border-bottom: 1px solid grey" *ngFor="let item of this.Trainers">{{item['trainer_district']}}</mat-list-item>
-        <!-- <mat-list-item role="listitem"><mat-icon style="color:rgb(168, 67, 67);font-size: 18px;">settings</mat-icon>Settings</mat-list-item> -->
+
         
 
-      </mat-list>
+      </mat-list> -->
       <button type="button" class="btn btn-success addbutton" data-toggle="modal" style="float: right;" data-target="#myModal">Add</button>
       
        
@@ -269,18 +270,18 @@
                           <li class="list-inline-item" style="padding-right: 20px;padding-bottom: 10px;">
                               <button class="btn btn-success btn-sm rounded-0"  style="color: #7278bc;
                               background:none;
-                              border: none;"type="button" data-toggle="tooltip" data-placement="top" title="View" (click)="viewDetails(trainer['trainer_id'],trainer,'eye')" ><i *ngIf="trainer.expanded" class="fa fa-eye"></i><i *ngIf="!trainer.expanded" class="fa fa-eye-slash"></i></button>
+                              border: none;"type="button" data-toggle="tooltip" data-placement="top" title="View" (click)="viewDetails(trainer['trainer_id'],trainer,'eye')" ><mat-icon *ngIf="trainer.expanded">visibility</mat-icon><mat-icon *ngIf="!trainer.expanded">visibility_off</mat-icon></button>
                           </li>
 
                       <li class="list-inline-item" style="padding-right: 20px;padding-bottom: 10px;">
                           <button class="btn btn-success btn-sm rounded-0" style="color: #3a9834;
                           background:none;
-                          border: none;" type="button" data-toggle="tooltip" data-placement="top" title="Update"  (click)="viewDetails(trainer['trainer_id'],trainer,'edit')"><i class="fa fa-edit" data-toggle="modal" data-target="#myModa"></i></button>
+                          border: none;" type="button" data-toggle="tooltip" data-placement="top" title="Update"  (click)="viewDetails(trainer['trainer_id'],trainer,'edit')"><mat-icon data-toggle="modal" data-target="#myModa">create</mat-icon></button>
                       </li>
                       <li class="list-inline-item" style="padding-right: 20px;padding-bottom: 10px;">
                           <button class="btn btn-danger btn-sm rounded-0"  style="background: none;
                           border: none;
-                          color: #c33737;"type="button" data-toggle="tooltip" data-placement="top" title="Delete" (click)="DeleteTrainers(trainer['trainer_id'],i)"><i class="fa fa-trash"></i></button>
+                          color: #c33737;"type="button" data-toggle="tooltip" data-placement="top" title="Delete" (click)="DeleteTrainers(trainer['trainer_id'],i)"><mat-icon >delete</mat-icon></button>
                       </li>
                      
                       </ul>
@@ -479,6 +480,11 @@
                     <label for="exampleFormControlTextarea1">Address :</label>
                     <textarea class="form-control" id="address" rows="1" formControlName="trainer_adress"></textarea>
                   </div>
+                  <div class="col">
+                    <label for="exampleFormControlTextarea1">Edit Image : </label>
+                    <input type="file" id="pro-image" name="pro-image" 
+                    class="form-control" multiple formControlName="image" (change)="onChange($event)">
+                  </div>
                  
                 </div>
                
@@ -666,6 +672,11 @@
                     <div class="col">
                       <label for="exampleFormControlTextarea1">Address :</label>
                       <textarea class="form-control" id="address" rows="1" formControlName="trainer_adress"></textarea>
+                    </div>
+                    <div class="col">
+                      <label for="exampleFormControlTextarea1">Add Image : </label>
+                      <input type="file" id="pro-image" name="pro-image" 
+                      class="form-control" multiple formControlName="image" (change)="onChange($event)">
                     </div>
                    
                   </div>

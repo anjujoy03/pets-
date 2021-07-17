@@ -144,7 +144,8 @@
                   <!-- <span class="icon shadow-lg"><i class="fas fa-profile" data-toggle="tooltip" data-placement="top" title="Logout" style="color: white;text-shadow: 0 0 black"></i></span> -->
                   <!-- <mat-icon   style="color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);font-size: 31px;">account_circle</mat-icon> -->
                   <mat-icon  style="cursor:pointer;" *ngIf="logactive"  style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle{{UserId}}</mat-icon>
-                  <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>&nbsp;&nbsp;<span style="color:white">{{UserId}}</span>
+                  <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>&nbsp;&nbsp;<span style="color:white;position: absolute;left: 66px;
+                  top: 2px;">{{UserId}}</span>
                     
                     <mat-list role="list" *ngIf="logactive">
                       <mat-list-item role="listitem"><mat-icon style="color: darkcyan;font-size: 18px;">perm_identity</mat-icon>{{UserId}}</mat-list-item>
@@ -177,9 +178,9 @@
 <div class="row" style="padding-bottom: 0px;background-color: #5e72e4;margin-top: -20px;padding-top: 100px;">
   <div class="col-md-8">
   <nav aria-label="breadcrumb"style="padding-left: 21px;" >
-    <ol class="breadcrumb"style="width: 50%; box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);" >
-      <li class="breadcrumb-item" ><a href="home" style="color: black !important;">Home &nbsp;<i class="fas fa-home"></i></a></li>
-      <li class="breadcrumb-item active" aria-current="page" style="text-decoration: none;cursor: initial;">Orders  &nbsp;<i class="fa fa-shopping-cart" aria-hidden="true"></i></li>
+    <ol class="breadcrumb"style="width: 31%; box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);" >
+      <li class="breadcrumb-item" ><a href="home" style="color: black !important;">Home &nbsp;<mat-icon style="font-size: 15px;">home</mat-icon></a></li>
+      <li class="breadcrumb-item active" aria-current="page" style="text-decoration: none;cursor: initial;">Orders  &nbsp;<mat-icon style="font-size: 15px;">shopping_cart</mat-icon></li>
     </ol>
   </nav> 
   </div>
@@ -216,17 +217,15 @@
 
 
     <div class="col-md-3">
-      <button type="button"  (click)="filterdropdown()" class="btn btn-success addbutton"style=" float: right;">Filter</button> 
+      <!-- <button type="button"  (click)="filterdropdown()" class="btn btn-success addbutton"style=" float: right;">Filter</button> 
       <mat-list role="list" style="position: absolute;
       top: 41px;
       left: 114px;
       z-index: 1000;" *ngIf="this.isfilter" >
         <mat-list-item role="listitem" (click)="filter('asc',this.pagedItems )" style="border-bottom: 1px solid grey">Sort by  order date</mat-list-item>
       
-        <!-- <mat-list-item role="listitem"><mat-icon style="color:rgb(168, 67, 67);font-size: 18px;">settings</mat-icon>Settings</mat-list-item> -->
-        
-
-      </mat-list>
+       
+      </mat-list> -->
        
     </div>
     </div>
@@ -280,7 +279,7 @@
                              
 
                           <li class="list-inline-item" style="padding-right: 20px;padding-bottom: 10px;">
-                              <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"  (click)="getorderDetails(order['order_id'])" data-placement="top" title="Update"><i class="fa fa-eye" data-toggle="modal" data-target="#myModa"></i></button>
+                              <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"  (click)="getorderDetails(order['order_id'])" data-placement="top" title="Update"><mat-icon data-toggle="modal" data-target="#myModa">visibility</mat-icon></button>
                           </li>
                          
                          

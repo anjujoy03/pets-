@@ -146,7 +146,8 @@
                       <!-- <mat-icon   style="color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);font-size: 31px;">account_circle</mat-icon> -->
                       <!-- <mat-icon style="color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);font-size: 31px;">account_circle</mat-icon> -->
                       <mat-icon  style="cursor:pointer;" *ngIf="logactive"  style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>
-                      <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>&nbsp;&nbsp;<span style="color:white">{{UserId}}</span>
+                      <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>&nbsp;&nbsp;<span style="color:white;position: absolute;left: 66px;
+                      top: 2px;">{{UserId}}</span>
                         
                       <mat-list role="list" *ngIf="logactive">
                         <mat-list-item role="listitem"><mat-icon style="color: darkcyan;font-size: 18px;">perm_identity</mat-icon>{{UserId}}</mat-list-item>
@@ -177,9 +178,9 @@
     <div class="row" style="padding-bottom: 0px;background-color: #5e72e4;margin-top: -20px;padding-top: 100px;">
       <div class="col-md-6">
       <nav aria-label="breadcrumb"style="padding-left: 21px;" >
-        <ol class="breadcrumb"style="width: 50%; box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);" >
-          <li class="breadcrumb-item" ><a href="home" style="color: black !important;">Home &nbsp;<i class="fas fa-home"></i></a></li>
-          <li class="breadcrumb-item active" aria-current="page" style="text-decoration: none;cursor: initial;">Pets  &nbsp;<i class="fa fa-paw" aria-hidden="true"></i></li>
+        <ol class="breadcrumb"style="width: 48%; box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);" >
+          <li class="breadcrumb-item" ><a href="home" style="color: black !important;">Home &nbsp;<mat-icon style="font-size: 15px;">home</mat-icon></a></li>
+          <li class="breadcrumb-item active" aria-current="page" style="text-decoration: none;cursor: initial;">Pets  &nbsp;<mat-icon>pets</mat-icon></li>
         </ol>
       </nav> 
       </div>
@@ -254,18 +255,18 @@
                             <li class="list-inline-item" style="padding-right: 20px;padding-bottom: 10px;">
                                 <button class="btn btn-success btn-sm rounded-0"  style="color: #7278bc;
                                 background:none;
-                                border: none;"type="button" data-toggle="tooltip" data-placement="top" title="View" (click)="viewDetails(pet['pet_id'],pet)" ><i *ngIf="pet.expanded" class="fa fa-eye"></i><i *ngIf="!pet.expanded" class="fa fa-eye-slash"></i></button>
+                                border: none;"type="button" data-toggle="tooltip" data-placement="top" title="View" (click)="viewDetails(pet['pet_id'],pet)" > <mat-icon *ngIf="pet.expanded">visibility</mat-icon><mat-icon *ngIf="!pet.expanded">visibility_off</mat-icon></button>
                             </li>
 
                         <li class="list-inline-item" style="padding-right: 20px;padding-bottom: 10px;">
                             <button class="btn btn-success btn-sm rounded-0" style="color: #3a9834;
                             background:none;
-                            border: none;" type="button" data-toggle="tooltip" data-placement="top" title="Update"  (click)="viewDetails(pet['pet_id'],pet)"><i class="fa fa-edit" data-toggle="modal" data-target="#myModa"></i></button>
+                            border: none;" type="button" data-toggle="tooltip" data-placement="top" title="Update"  (click)="viewDetails(pet['pet_id'],pet)"><mat-icon  data-toggle="modal" data-target="#myModa">create</mat-icon></button>
                         </li>
                         <li class="list-inline-item" style="padding-right: 20px;padding-bottom: 10px;">
                             <button class="btn btn-danger btn-sm rounded-0"  style="background: none;
                             border: none;
-                            color: #c33737;"type="button" data-toggle="tooltip" data-placement="top" title="Delete" (click)="Deletepets(pet['pet_id'])"><i class="fa fa-trash"></i></button>
+                            color: #c33737;"type="button" data-toggle="tooltip" data-placement="top" title="Delete" (click)="Deletepets(pet['pet_id'])"><mat-icon>delete</mat-icon></button>
                         </li>
                        
                         </ul>
@@ -409,7 +410,25 @@
                     <label for="exampleFormControlSelect1">Breed:</label>
                     <select class="form-control" id="breed" formControlName="breed_name">
                     
-                      <option  *ngFor="let opt breed" value="{{opt.value}}">{{opt.value}} {{opt}}</option>
+                      <option>SIAESE</option>
+                      <option>PERSIAN</option>
+                      <option>MAIN GOON</option>
+                      <option>RAGDOLL</option>
+                      <option>BENGAL</option>
+                      <option>ABYSINIAN</option>
+                      <option>BIRMAN</option>
+                      <option>LABARDOR RETRIVER</option>
+                      <option>GERMAN SHEPERD</option>
+                      <option>BULLDOG</option>
+                      <option>POODLE</option>
+                      <option>DOBERMAN</option>
+                      <option>PUG</option>
+                      <option>BETTA</option>
+                      <option>GOLDFISH</option>
+                      <option>ANGEL FISH</option>
+                      <option>CAT FISH</option>
+                      <option>GUPPIES</option>
+                      <option>MOLLIES</option>
                       
                   </select>
                    
@@ -519,10 +538,14 @@
                  
                 </div>
                 <br>
-                <div class="row w-100" style="color:#3f51b5!important;text-align: center;" >EDIT IMAGE</div>
+                <!-- <div class="row w-100" style="color:#3f51b5!important;text-align: center;" >EDIT IMAGE</div> -->
                 <div>
-                  <img src="http://ec2-65-2-121-70.ap-south-1.compute.amazonaws.com{{ this.petDetils && this.petDetils[0]?.donation_reason}}" width="200px" height="200px">
+                  <!-- <img src="http://ec2-65-2-121-70.ap-south-1.compute.amazonaws.com{{ this.petDetils && this.petDetils[0]?.donation_reason}}" width="200px" height="200px"> -->
                 </div>
+                <label for="exampleFormControlTextarea1">Edit Image:</label>
+                <input type="file" id="pro-image" name="pro-image" 
+                            class="form-control" multiple formControlName="pet_image" (change)="onChange($event)">
+                    
                
               <div class="modal-footer">
                 <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CLOSE</button>
