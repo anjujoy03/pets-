@@ -462,20 +462,20 @@
         <div class="row">
           <div class="modal" id="myModa">
             <div class="modal-dialog">
-              <div class="modal-content" style="width: 200% !important;left: 0;margin-bottom:90px">
+              <div class="modal-content" style="width: 200% !important;left: 65px;margin-bottom:90px">
                 <div class="modal-header">
                   <h4 class="modal-title">
 
-                    Update  Details
+                    UPDATE DETAILS
 
                   </h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                
                 </div>
                 <div class="modal-body">
                            <form style="padding-left: 10px;padding-right: 40px;" [formGroup]="petForm">
                     <div class="row">
-
-                      <label for="exampleFormControlInput1"><b>CATEGORY:</b></label>
+                    <div class="col">
+                      <label for="exampleFormControlInput1">CATEGORY:</label>
                       <select class="form-control" id="category" formControlName="category"
                         (change)="getCategory($event)">
                         <option selected value="pet">PET</option>
@@ -483,7 +483,7 @@
                         <option value="food">FOOD</option>
                         <option value="toy">TOY</option>
                       </select>
-
+                      </div>
                     </div>
                     <br>
                     <div class="petsrow" *ngIf="this.Category=='pet'&&this.Category!='food'&&this.Category!='toy'">
@@ -494,14 +494,14 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>CATEGORY NAME:</b></label>
+                          <label for="exampleFormControlInput1">CATEGORY NAME:</label>
                           <input type="text" class="form-control" id="age" placeholder=""
                             formControlName="category_name">
 
                         </div>
                         <div class="col">
                           
-                            <label for="exampleFormControlInput1"><b>TYPE:</b></label>
+                            <label for="exampleFormControlInput1">TYPE:</label>
                             <select class="form-control" id="category" formControlName="type">
                               <option selected disabled>SELECT TYPE</option>
                               <option value="deal">DEAL OF THE DAY</option>
@@ -519,7 +519,7 @@
                       <div class="row">
 
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>BREED NAME:</b></label>
+                          <label for="exampleFormControlSelect1">BREED NAME:</label>
                           <select class="form-control" id="breed" formControlName="breed_name">
                             <option selected disabled>SELECT BREED</option>
                             <option></option>
@@ -528,7 +528,7 @@
                           </select>
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>GENDER:</b> </label>
+                          <label for="exampleFormControlInput3">GENDER: </label>
                           <select class="form-control" id="breed" formControlName="sex">
                             <option selected disabled>SELECT GENDER</option>
                             <option value="Male">MALE</option>
@@ -541,12 +541,12 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>COLOUR:</b> </label>
+                          <label for="exampleFormControlInput3">COLOUR: </label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="colour">
 
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>AGE:</b></label>
+                          <label for="exampleFormControlInput1">AGE:</label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="age">
                         </div>
 
@@ -556,12 +556,12 @@
 
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>WEIGHT:</b></label>
+                          <label for="exampleFormControlSelect1">WEIGHT:</label>
                           <input type="text" class="form-control" id="weight" placeholder="" formControlName="weight">
                         </div>
                         <div class="col">
                           
-                            <label for="exampleFormControlSelect1"><b>PRICE:</b></label>
+                            <label for="exampleFormControlSelect1">PRICE:</label>
   
                             <input type="number" class="form-control" id="weight" placeholder="" formControlName="price">
                          
@@ -571,7 +571,7 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                        <label for="exampleFormControlSelect1"><b>DESCRIPTION:</b></label>
+                        <label for="exampleFormControlSelect1">DESCRIPTION:</label>
 
                           <textarea class="form-control" id="description" rows="1"
                             formControlName="category_desc"></textarea>
@@ -580,13 +580,15 @@
                       <br>
                       <div class="row">
                    <div class="col">
-                        <label for="exampleFormControlSelect1"><b>IMAGE:</b></label>
+                        <label for="exampleFormControlSelect1">IMAGE:</label>
                         <input type="file"  id="weight" placeholder="" formControlName="image"
                           (change)="onChange($event)">
                       </div></div>
-                                          
-                      <button type="button" style="width: 100%;background:#3f51b5!important;;" class="btn btn-success"
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CLOSE</button>                     
+                      <button type="button"  id="footbtn" class="btn btn-success"
                         (click)="onSubmit()" data-dismiss="modal">ADD PET</button>
+                        </div>
                     
                     <br>
                     <div class="petsrow" *ngIf="this.Category=='food'&&this.Category!='toy'&&this.Category!='pet' ">
@@ -599,7 +601,7 @@
                         <div class="col">
                      
                           
-                          <label for="exampleFormControlInput1"><b>TYPE:</b></label>
+                          <label for="exampleFormControlInput1">TYPE:</label>
                           <select class="form-control" id="category" formControlName="type">
                             <option selected disabled>SELECT TYPE</option>
                             <option value="deal">DEAL OF THE DAY</option>
@@ -610,13 +612,13 @@
                         </div>
 
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>FOOD NAME:</b> </label>
+                          <label for="exampleFormControlInput3">FOOD NAME: </label>
                           <input type="text" class="form-control" id="age" placeholder=""
                             formControlName="category_name">
 
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>BRAND NAME:</b></label>
+                          <label for="exampleFormControlInput1">BRAND NAME:</label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="brand_name">
                         </div>
 
@@ -626,12 +628,12 @@
                       <div class="row">
 
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>FLAVOUR:</b> </label>
+                          <label for="exampleFormControlInput3">FLAVOUR: </label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="flavour">
 
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>ITEM WEIGHT:</b></label>
+                          <label for="exampleFormControlInput1">ITEM WEIGHT:</label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="weight">
                         </div>
 
@@ -640,7 +642,7 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>AGE RANGE:</b></label>
+                          <label for="exampleFormControlInput1">AGE RANGE:</label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="age_range">
                         </div>
 
@@ -649,12 +651,12 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>TARGET SPECIES:</b></label>
+                          <label for="exampleFormControlInput1">TARGET SPECIES:</label>
                           <input type="text" class="form-control" id="age" placeholder=""
                             formControlName="target_species">
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>PRICE:</b> </label>
+                          <label for="exampleFormControlInput3">PRICE: </label>
                           <input type="number" class="form-control" id="age" placeholder="" formControlName="price">
                         </div>
                       </div>
@@ -662,12 +664,12 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>DISCOUNT:</b> </label>
+                          <label for="exampleFormControlInput3">DISCOUNT: </label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="discount">
 
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>DISCOUNT TYPE:</b></label>
+                          <label for="exampleFormControlInput1">DISCOUNT TYPE:</label>
                           <select class="form-control" id="breed" formControlName="discount_type">
                             <option selected disabled>DISCOUNT TYPE</option>
                             <option>PERCENT</option>
@@ -683,7 +685,7 @@
                       <div class="row">
                   
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>DESCRIPTION:</b></label>
+                          <label for="exampleFormControlSelect1">DESCRIPTION:</label>
 
                           <textarea class="form-control" id="description" rows="1"
                             formControlName="category_desc"></textarea>
@@ -692,7 +694,7 @@
                       <br>
                       <div class="row">
                       <!-- <div class="col">
-                        <label for="exampleFormControlSelect1"><b>IMAGE:</b></label>
+                        <label for="exampleFormControlSelect1">IMAGE:</label>
                         <input type="file" class="form-control" id="weight" placeholder="" formControlName="image"
                           (change)="onChange($event)">
                       </div> -->
@@ -711,7 +713,7 @@
                         <div class="col">
                      
                           
-                          <label for="exampleFormControlInput1"><b>TYPE:</b></label>
+                          <label for="exampleFormControlInput1">TYPE:</label>
                           <select class="form-control" id="category" formControlName="type">
                             <option selected disabled>SELECT TYPE</option>
                             <option value="deal">DEAL OF THE DAY</option>
@@ -722,7 +724,7 @@
 
                         <div class="col">
                           <div class="col">
-                            <label for="exampleFormControlInput1"><b>TOY NAME:</b></label>
+                            <label for="exampleFormControlInput1">TOY NAME:</label>
                             <input type="text" class="form-control" id="age" placeholder=""
                               formControlName="category_name">
 
@@ -738,12 +740,12 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>IMAGE:</b></label>
+                          <label for="exampleFormControlSelect1">IMAGE:</label>
                           <input type="file" class="form-control" id="weight" placeholder="" formControlName="image"
                             (change)="onChange($event)">
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>PRICE:</b></label>
+                          <label for="exampleFormControlSelect1">PRICE:</label>
 
                           <input type="number" class="form-control" id="weight" placeholder="" formControlName="price">
                         </div>
@@ -751,12 +753,12 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>DESCRPTION:</b></label>
+                          <label for="exampleFormControlSelect1">DESCRPTION:</label>
                           <textarea class="form-control" id="description" rows="1"
                             formControlName="category_desc"></textarea>
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>TARGET SPECIES:</b></label>
+                          <label for="exampleFormControlSelect1">TARGET SPECIES:</label>
 
                           <input type="number" class="form-control" id="weight" placeholder=""
                             formControlName="target_species">
@@ -768,12 +770,12 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>DISCOUNT:</b> </label>
+                          <label for="exampleFormControlInput3">DISCOUNT: </label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="discount">
 
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>DISCOUNT TYPE:</b></label>
+                          <label for="exampleFormControlInput1">DISCOUNT TYPE:</label>
                           <select class="form-control" id="breed" formControlName="discount_type">
                             <option selected disabled>DISCOUNT TYPE</option>
                             <option>PERCENT</option>
@@ -785,9 +787,11 @@
 
                       </div>
                       <br>
-                      <button type="button" style="width: 100%;background:#3f51b5!important;;" class="btn btn-success"
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CLOSE</button>                     
+                      <button type="button"id="footbtn" class="btn btn-success"
                         (click)="onSubmit()" data-dismiss="modal">ADD TOY</button>
-
+                      </div>
                     </div>
 
 
@@ -854,20 +858,20 @@
         <div class="row">
           <div class="modal" id="myModal">
             <div class="modal-dialog">
-              <div class="modal-content" style="width: 200% !important;left: 0;margin-bottom:90px">
+              <div class="modal-content" style="width: 200% !important;left: 15px;margin-bottom:90px">
                 <div class="modal-header">
                   <h4 class="modal-title" style="color:white">
 
                     ADD PRODUCTS
 
                   </h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+               
                 </div>
                 <div class="modal-body">
                   <form style="padding-left: 10px;padding-right: 40px;" [formGroup]="petForm">
                     <div class="row">
-
-                      <label for="exampleFormControlInput1"><b>CATEGORY:</b></label>
+                      <div class="col">
+                      <label for="exampleFormControlInput1">CATEGORY:</label>
                       <select class="form-control" id="category" formControlName="category"
                         (change)="getCategory($event)">
                         <option selected value="pet">PET</option>
@@ -875,7 +879,7 @@
                         <option value="food">FOOD</option>
                         <option value="toy">TOY</option>
                       </select>
-
+                     </div>
                     </div>
                     <br>
                     <div class="petsrow" *ngIf="this.Category=='pet'&& this.Category!='food'&&this.Category!='toy'">
@@ -886,7 +890,7 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>CATEGORY NAME:</b></label>
+                          <label for="exampleFormControlInput1">CATEGORY NAME:</label>
                           <input type="text" class="form-control" id="age" placeholder=""
                             formControlName="category_name">
 
@@ -894,7 +898,7 @@
                         <div class="col">
                      
                           
-                            <label for="exampleFormControlInput1"><b>TYPE:</b></label>
+                            <label for="exampleFormControlInput1">TYPE:</label>
                             <select class="form-control" id="category" formControlName="type">
                               <option selected disabled>SELECT TYPE</option>
                               <option value="deal">DEAL OF THE DAY</option>
@@ -911,7 +915,7 @@
                       <div class="row">
 
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>BREED NAME:</b></label>
+                          <label for="exampleFormControlSelect1">BREED NAME:</label>
                           <select class="form-control" id="breed" formControlName="breed_name">
                             <option selected disabled>SELECT BREED</option>
                             <option></option>
@@ -920,7 +924,7 @@
                           </select>
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>GENDER:</b> </label>
+                          <label for="exampleFormControlInput3">GENDER: </label>
                           <select class="form-control" id="breed" formControlName="sex">
                             <option selected disabled>SELECT GENDER</option>
                             <option value="Male">MALE</option>
@@ -932,12 +936,12 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>COLOUR:</b> </label>
+                          <label for="exampleFormControlInput3">COLOUR: </label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="colour">
 
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>AGE:</b></label>
+                          <label for="exampleFormControlInput1">AGE:</label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="age">
                         </div>
 
@@ -947,12 +951,12 @@
 
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>WEIGHT:</b></label>
+                          <label for="exampleFormControlSelect1">WEIGHT:</label>
                           <input type="text" class="form-control" id="weight" placeholder="" formControlName="weight">
                         </div>
                         <div class="col">
 
-                          <label for="exampleFormControlSelect1"><b>PRICE:</b></label>
+                          <label for="exampleFormControlSelect1">PRICE:</label>
 
                           <input type="number" class="form-control" id="weight" placeholder="" formControlName="price">
 
@@ -962,7 +966,7 @@
                       <div class="row">
                        
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>DESCRIPTION:</b></label>
+                          <label for="exampleFormControlSelect1">DESCRIPTION:</label>
 
                           <textarea class="form-control" id="description" rows="1"
                             formControlName="category_desc"></textarea>
@@ -974,15 +978,18 @@
                         <p style="color: #c33737;font-size: 12px;">Note:Please try and add image of size: 400x400</p>
                         <br>
                         <div class="col">
-                          <!-- <label for="exampleFormControlSelect1"><b>IMAGE:</b></label> -->
+                          <!-- <label for="exampleFormControlSelect1">IMAGE:</label> -->
                           <input type="file"  class="form-control" id="weight"  formControlName="image" accept="image/jpeg,image/jpg,image/png"
                             (change)="onChange($event)">
                         </div>
                       </div>
                       <br>
-                      
-                      <button type="button" style="width: 100%;background:#3f51b5!important;;" class="btn btn-success"
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CLOSE</button>
+                        
+                      <button type="button" id="footbtn" class="btn btn-success"
                         (click)="onSubmit()" data-dismiss="modal">ADD PET</button>
+                        </div>
                     </div>
                     <br>
                     <div class="petsrow" *ngIf="this.Category=='food'&&this.Category!='toy'&&this.Category!='pet'">
@@ -995,7 +1002,7 @@
                         <div class="col">
                      
                           
-                          <label for="exampleFormControlInput1"><b>TYPE:</b></label>
+                          <label for="exampleFormControlInput1">TYPE:</label>
                           <select class="form-control" id="category" formControlName="type">
                             <option selected disabled>SELECT TYPE</option>
                             <option value="deal">DEAL OF THE DAY</option>
@@ -1005,13 +1012,13 @@
                         </div>
 
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>FOOD NAME:</b> </label>
+                          <label for="exampleFormControlInput3">FOOD NAME: </label>
                           <input type="text" class="form-control" id="age" placeholder=""
                             formControlName="category_name">
 
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>BRAND NAME:</b></label>
+                          <label for="exampleFormControlInput1">BRAND NAME:</label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="brand_name">
                         </div>
 
@@ -1022,7 +1029,7 @@
                         <div class="col">
                      
                           
-                          <label for="exampleFormControlInput1"><b>TYPE:</b></label>
+                          <label for="exampleFormControlInput1">TYPE:</label>
                           <select class="form-control" id="category" formControlName="type">
                             <option selected disabled>SELECT TYPE</option>
                             <option value="deal">DEAL OF THE DAY</option>
@@ -1031,12 +1038,12 @@
                           </select>
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>FLAVOUR:</b> </label>
+                          <label for="exampleFormControlInput3">FLAVOUR: </label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="flavour">
 
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>ITEM WEIGHT:</b></label>
+                          <label for="exampleFormControlInput1">ITEM WEIGHT:</label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="weight">
                         </div>
 
@@ -1045,7 +1052,7 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>AGE RANGE:</b></label>
+                          <label for="exampleFormControlInput1">AGE RANGE:</label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="age_range">
                         </div>
 
@@ -1054,12 +1061,12 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>TARGET SPECIES:</b></label>
+                          <label for="exampleFormControlInput1">TARGET SPECIES:</label>
                           <input type="text" class="form-control" id="age" placeholder=""
                             formControlName="target_species">
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>PRICE:</b> </label>
+                          <label for="exampleFormControlInput3">PRICE: </label>
                           <input type="number" class="form-control" id="age" placeholder="" formControlName="price">
                         </div>
                       </div>
@@ -1067,12 +1074,12 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>DISCOUNT:</b> </label>
+                          <label for="exampleFormControlInput3">DISCOUNT: </label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="discount">
 
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>DISCOUNT TYPE:</b></label>
+                          <label for="exampleFormControlInput1">DISCOUNT TYPE:</label>
                           <select class="form-control" id="breed" formControlName="discount_type">
                             <option selected disabled>DISCOUNT TYPE</option>
                             <option>PERCENT</option>
@@ -1088,7 +1095,7 @@
                       <div class="row">
                  
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>DESCRIPTION:</b></label>
+                          <label for="exampleFormControlSelect1">DESCRIPTION:</label>
 
                           <textarea class="form-control" id="description" rows="1"
                             formControlName="category_desc"></textarea>
@@ -1099,16 +1106,18 @@
                         <p style="color: #c33737;font-size: 12px;">Note:Please try and add image of size: 400x400</p>
                         <br>
                         <div class="col">
-                          <!-- <label for="exampleFormControlSelect1"><b>IMAGE:</b></label> -->
+                          <!-- <label for="exampleFormControlSelect1">IMAGE:</label> -->
                           <input type="file"  class="form-control" id="weight"  formControlName="image" accept="image/jpeg,image/jpg,image/png"
                             (change)="onChange($event)">
                         </div>
                       </div>
                       <br>
-                    
+                      <div class="modal-footer">
+                      <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CLOSE</button>
                       
-                      <button type="button" style="width: 100%;background:#3f51b5!important;;" class="btn btn-success"
+                      <button type="button" id="footbtn" class="btn btn-success"
                         (click)="onSubmit()" data-dismiss="modal">ADD FOOD</button>
+                        </div>
                     </div>
                     <br>
                     <div class="petsrow" *ngIf="this.Category=='toy'">
@@ -1121,7 +1130,7 @@
                         <div class="col">
                      
                           
-                          <label for="exampleFormControlInput1"><b>TYPE:</b></label>
+                          <label for="exampleFormControlInput1">TYPE:</label>
                           <select class="form-control" id="category" formControlName="type">
                             <option selected disabled>SELECT TYPE</option>
                             <option value="deal">DEAL OF THE DAY</option>
@@ -1132,7 +1141,7 @@
 
                         <div class="col">
                           <div class="col">
-                            <label for="exampleFormControlInput1"><b>TOY NAME:</b></label>
+                            <label for="exampleFormControlInput1">TOY NAME:</label>
                             <input type="text" class="form-control" id="age" placeholder=""
                               formControlName="category_name">
 
@@ -1148,12 +1157,12 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>IMAGE:</b></label>
+                          <label for="exampleFormControlSelect1">IMAGE:</label>
                           <input type="file" class="form-control" id="weight" placeholder="" formControlName="image"
                             (change)="onChange($event)">
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>PRICE:</b></label>
+                          <label for="exampleFormControlSelect1">PRICE:</label>
 
                           <input type="number" class="form-control" id="weight" placeholder="" formControlName="price">
                         </div>
@@ -1161,12 +1170,12 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>DESCRPTION:</b></label>
+                          <label for="exampleFormControlSelect1">DESCRPTION:</label>
                           <textarea class="form-control" id="description" rows="1"
                             formControlName="category_desc"></textarea>
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlSelect1"><b>TARGET SPECIES:</b></label>
+                          <label for="exampleFormControlSelect1">TARGET SPECIES:</label>
 
                           <input type="number" class="form-control" id="weight" placeholder=""
                             formControlName="target_species">
@@ -1178,12 +1187,12 @@
                       <br>
                       <div class="row">
                         <div class="col">
-                          <label for="exampleFormControlInput3"><b>DISCOUNT:</b> </label>
+                          <label for="exampleFormControlInput3">DISCOUNT: </label>
                           <input type="text" class="form-control" id="age" placeholder="" formControlName="discount">
 
                         </div>
                         <div class="col">
-                          <label for="exampleFormControlInput1"><b>DISCOUNT TYPE:</b></label>
+                          <label for="exampleFormControlInput1">DISCOUNT TYPE:</label>
                           <select class="form-control" id="breed" formControlName="discount_type">
                             <option selected disabled>DISCOUNT TYPE</option>
                             <option>PERCENT</option>
@@ -1200,15 +1209,18 @@
                         <p style="color: #c33737;font-size: 12px;">Note:Please try and add image of size: 400x400</p>
                         <br>
                         <div class="col">
-                          <!-- <label for="exampleFormControlSelect1"><b>IMAGE:</b></label> -->
+                          <!-- <label for="exampleFormControlSelect1">IMAGE:</label> -->
                           <input type="file"  class="form-control" id="weight"  formControlName="image" accept="image/jpeg,image/jpg,image/png"
                             (change)="onChange($event)">
                         </div>
                       </div>
                       <br>
-                      <button type="button" style="width: 100%;background:#3f51b5!important;;" class="btn btn-success"
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CLOSE</button>
+                        
+                      <button type="button" id="footbtn" class="btn btn-success"
                         (click)="onSubmit()" data-dismiss="modal">ADD TOY</button>
-
+                      </div>
                     </div>
 
 
@@ -1328,7 +1340,7 @@
                   </div> -->
 
                     <div class="form-group row">
-                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Name:</b>
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Name:
                       </label>
                       <div class="col-sm-9">
                         <p>Tom</p>
@@ -1337,7 +1349,7 @@
                     </div>
                     <div class="form-group row">
                       <label for="colFormLabelSm"
-                        class="col-sm-3 col-form-label col-form-label-sm"><b>Category:</b></label>
+                        class="col-sm-3 col-form-label col-form-label-sm">Category:</label>
                       <div class="col-sm-9">
                         <p>jvhjh</p>
 
@@ -1345,7 +1357,7 @@
                     </div>
                     <div class="form-group row">
                       <label for="colFormLabelSm"
-                        class="col-sm-3 col-form-label col-form-label-sm"><b>Breed:</b></label>
+                        class="col-sm-3 col-form-label col-form-label-sm">Breed:</label>
                       <div class="col-sm-9">
                         <p>vvg</p>
 
@@ -1353,7 +1365,7 @@
                     </div>
                     <div class="form-group row">
                       <label for="colFormLabelSm"
-                        class="col-sm-3 col-form-label col-form-label-sm"><b>Purpose:</b></label>
+                        class="col-sm-3 col-form-label col-form-label-sm">Purpose:</label>
                       <div class="col-sm-9">
                         <p>vvg</p>
 
@@ -1361,22 +1373,22 @@
                     </div>
                     <div class="form-group row">
                       <label for="colFormLabelSm"
-                        class="col-sm-3 col-form-label col-form-label-sm"><b>Gender:</b></label>
+                        class="col-sm-3 col-form-label col-form-label-sm">Gender:</label>
                       <div class="col-sm-9">
                         <p>Male</p>
 
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Certified or
-                          Not:</b></label>
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Certified or
+                          Not:</label>
                       <div class="col-sm-9">
                         <p>Certified</p>
 
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Age:</b></label>
+                      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Age:</label>
                       <div class="col-sm-9">
                         <p>3</p>
 
@@ -1384,7 +1396,7 @@
                     </div>
                     <div class="form-group row">
                       <label for="colFormLabelSm"
-                        class="col-sm-3 col-form-label col-form-label-sm"><b>Color:</b></label>
+                        class="col-sm-3 col-form-label col-form-label-sm">Color:</label>
                       <div class="col-sm-9">
                         <p>White</p>
 
@@ -1392,7 +1404,7 @@
                     </div>
                     <div class="form-group row">
                       <label for="colFormLabelSm"
-                        class="col-sm-3 col-form-label col-form-label-sm"><b>Weight:</b></label>
+                        class="col-sm-3 col-form-label col-form-label-sm">Weight:</label>
                       <div class="col-sm-9">
                         <p>3Kg</p>
 
@@ -1400,7 +1412,7 @@
                     </div>
                     <div class="form-group row">
                       <label for="colFormLabelSm"
-                        class="col-sm-3 col-form-label col-form-label-sm"><b>Description:</b></label>
+                        class="col-sm-3 col-form-label col-form-label-sm">Description:</label>
                       <div class="col-sm-9">
                         <p style=" max-width:250px;
                             word-wrap:break-word;">jhbhjbhjb hjbhhhhhh </p>
@@ -1409,7 +1421,7 @@
                     </div>
                     <div class="form-group row">
                       <label for="colFormLabelSm"
-                        class="col-sm-3 col-form-label col-form-label-sm"><b>Characteristics:</b></label>
+                        class="col-sm-3 col-form-label col-form-label-sm">Characteristics:</label>
                       <div class="col-sm-9">
                         <ul class="a">
                           <li>
