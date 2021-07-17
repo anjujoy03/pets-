@@ -273,12 +273,12 @@
     <div class="row">
       <div class="modal" id="myMo" >
         <div class="modal-dialog" id="add" >
-          <div class="modal-content"style="width: 100% !important;left: 0;margin-bottom:90px">
+          <div class="modal-content"style="width: 100% !important;left: 344px;margin-bottom:90px">
           
             <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">Edit About Us</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
+             
             </div>
             
             <!-- Modal body -->
@@ -316,10 +316,9 @@
             </div>
             
             <!-- Modal footer -->
-          <div class="modal-footer">
-            
-   
-               <button type="button"  class="btn btn-success" (click)="onSubmit()" data-dismiss="modal" style="background-color: #75d5e2"  >Update</button>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CLOSE</button>
+              <button type="button" id="footbtn"  class="btn btn-success" (click)="onSubmit()" data-dismiss="modal"  >Update</button>
               
             </div>
             
