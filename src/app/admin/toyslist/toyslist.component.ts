@@ -34,7 +34,7 @@ export class ToyslistComponent implements OnInit {
   logactive: boolean=false;
   isfilter: boolean=false;
   TempList!: Set<unknown>;
-
+  isShown: boolean = false ;
 
  
 
@@ -113,6 +113,12 @@ export class ToyslistComponent implements OnInit {
     this.show=!this.show;
     console.log(this.show)
   } 
+  toggleShow() {
+
+    this.isShown = ! this.isShown;
+    
+    }
+
   petForm!: FormGroup;
   ngOnInit(): void {
   this.getPets();

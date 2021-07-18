@@ -27,6 +27,7 @@ export class OrderdetailsComponent implements OnInit {
   show=false;
   UserId=localStorage.getItem('user_id');
   logactive: boolean=false;
+  isShown: boolean = false ; 
   constructor(private formBuilder: FormBuilder,private http:HttpClient,private gen:GeneralserviceService,private page:PagerService,private pipe:DatePipe,private router:Router) {}
 
   options: Config = { multi: false };
@@ -102,6 +103,11 @@ export class OrderdetailsComponent implements OnInit {
     this.show=!this.show;
     console.log(this.show)
   }
+  toggleShow() {
+
+    this.isShown = ! this.isShown;
+    
+    }
  
   setPage(page: number) {
     console.log(page)

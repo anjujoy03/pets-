@@ -21,7 +21,7 @@ export class RegisershopComponent implements OnInit {
   District: any;
   shopList: any;
   shopDetails: any;
-
+  isShown: boolean = false ;
   
 
  
@@ -111,6 +111,11 @@ export class RegisershopComponent implements OnInit {
     this.show=!this.show;
     console.log(this.show)
   }
+  toggleShow() {
+
+    this.isShown = ! this.isShown;
+    
+    }
 
 
     ngOnInit(): void {

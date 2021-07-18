@@ -1010,7 +1010,63 @@ color: black !important;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+#filter{
+  float: left;
+    margin-right: 30px !important;
+    width: 100px;
+    background: white;
+    border: none;
+    color: #5e72e4;
+    font-weight: 500
+}
+#filter:hover{
+  background: white;
+  border: none;
+  color: #5e72e4;
+  box-shadow: whitesmoke;
+}
+.cardfil
+{
+        border-radius: 18px;
+        background: #fff;
+        font-weight: 600;
+      
+       
+        text-align: center;
+       
+      margin-left: 20px;
+      cursor: pointer;
+      margin-bottom: 16px;
+      width:50rem;
+      
+      
+}
+.fltbtn:focus, [type="submit"]:focus {
+  outline: none;
+  background-color: #2dce89;
+  border-color: #2dce89;
+  color: rgb(158, 151, 151);
+  }
+  select:focus, [type="submit"]:focus {
+    outline: none;
+        }
+.fltbtn{
+  width: 20%;
+  height: 33px;border-radius: 2px;border:none;
+ 
+  margin-top: 31px;
+  background-color: #2dce89;
+border-color: #2dce89;
+}
+.fltbtn:hover {
+  box-shadow: 0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+  transform: translateY(-1px);
+}
+.fltbtn:hover {
+  color: #fff;
+  background-color: #2dce89;
+  border-color: #2dce89;
+}
 #footbtn{
   color: #fff;
   background-color: #2dce89;
@@ -1042,3 +1098,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-color: #f7fafc;
   
 }
+.table-striped>tbody>tr:nth-child(even)>td, 
+.table-striped>tbody>tr:nth-child(even)>th {
+   background-color: #e9ecef; 
+ }
+ .table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: white; 
+ }
+ thead{
+  background-color: #e9ecef !important; 
+  color: #000000 !important;
+  
+ }
+  thead tr th{
+    font-size: 13px !important;
+  }

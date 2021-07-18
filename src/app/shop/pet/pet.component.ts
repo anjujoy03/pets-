@@ -26,6 +26,7 @@ export class PetComponent implements OnInit {
   Product_dtls: any;
   logactive: boolean=false;
   isfilter: boolean=false;
+  isShown: boolean = false ; 
 
   constructor(private formBuilder: FormBuilder,private http:HttpClient,private gen:GeneralserviceService,private page:PagerService,private router:Router) {
     
@@ -126,6 +127,11 @@ if(place =='all'){
   accountdropdown(){
     this.logactive=!this.logactive;
   }
+  toggleShow() {
+
+    this.isShown = ! this.isShown;
+    
+    }
 
  
 

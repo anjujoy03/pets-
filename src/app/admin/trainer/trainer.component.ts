@@ -19,6 +19,7 @@ export class TrainerComponent implements OnInit {
   logactive: boolean=false;
   isfilter: boolean=false;
   dist: any;
+  isShown: boolean = false ; 
 
   constructor(private formBuilder: FormBuilder,private http:HttpClient,private gen:GeneralserviceService,private page:PagerService,private router:Router) {}
 
@@ -105,6 +106,11 @@ export class TrainerComponent implements OnInit {
   filterdropdown(){
     this.isfilter=!this.isfilter;
   }
+  toggleShow() {
+
+    this.isShown = ! this.isShown;
+    
+    }
   getdist(){
     this.http.post(environment.apiUrl + '/apigetdist',{headers:''}).subscribe((response:any) => {
       if(response['status'] =='SUCCESS'){

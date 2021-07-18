@@ -21,7 +21,7 @@ export class PetsComponent implements OnInit {
   petListTemp: any;
   States: any;
   District: any;
-  
+  isShown: boolean = false ; 
   shoCert: boolean=false;
   show:boolean=false;
   UserId=localStorage.getItem('user_id');
@@ -116,7 +116,12 @@ export class PetsComponent implements OnInit {
   accountdropdown(){
     this.logactive=!this.logactive;
   }
-   
+  toggleShow() {
+
+    this.isShown = ! this.isShown;
+    
+    }
+
    
   petForm!: FormGroup;
   myFiles:any=[];

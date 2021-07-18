@@ -21,6 +21,7 @@ export class FoodComponent implements OnInit {
   show: boolean=false;
   UserId=localStorage.getItem('user_id');
   logactive: boolean=false;
+  isShown: boolean = false ; 
 
   constructor(private formBuilder: FormBuilder,private http:HttpClient,private gen:GeneralserviceService,private page:PagerService,private loc:Location,private router:Router
   ) {}
@@ -98,6 +99,11 @@ export class FoodComponent implements OnInit {
     this.show=!this.show;
     console.log(this.show)
   }
+  toggleShow() {
+
+    this.isShown = ! this.isShown;
+    
+    }
   setPage(page: number) {
     console.log(page)
     // get pager object from service

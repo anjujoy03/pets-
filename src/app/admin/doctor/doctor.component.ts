@@ -36,6 +36,7 @@ export class DoctorComponent implements OnInit {
   UserId=localStorage.getItem('user_id');
   logactive: boolean=false;
   isfilter: boolean=false;
+  isShown: boolean = false ; 
 
   constructor(private formBuilder: FormBuilder,private http:HttpClient,private gen:GeneralserviceService,private page:PagerService,private pipe:DatePipe,private router:Router) {
     
@@ -105,6 +106,11 @@ export class DoctorComponent implements OnInit {
  filterdropdown(){
     this.isfilter=!this.isfilter;
   } 
+  toggleShow() {
+
+    this.isShown = ! this.isShown;
+    
+    }
 
     ngOnInit(): void {
       this.doctorForm = this.formBuilder.group({

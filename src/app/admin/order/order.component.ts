@@ -30,6 +30,7 @@ export class OrderComponent implements OnInit {
   UserId=localStorage.getItem('user_id');
   logactive: boolean=false;
   isfilter: boolean=false;
+  isShown: boolean = false ;
 
   constructor(private formBuilder: FormBuilder,private http:HttpClient,private gen:GeneralserviceService,private page:PagerService,private pipe:DatePipe,private router:Router) {
     
@@ -117,7 +118,11 @@ export class OrderComponent implements OnInit {
     this.show=!this.show;
     console.log(this.show)
   }
+  toggleShow() {
 
+    this.isShown = ! this.isShown;
+    
+    }
   ngOnInit(): void {
     this.getorders();
   }
