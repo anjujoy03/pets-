@@ -175,7 +175,7 @@
 
     <div class="row" style="padding-bottom: 0px;background-color: #5e72e4;margin-top: -20px;padding-top: 100px;">
       <div class="col-md-8">
-      <nav aria-label="breadcrumb"style="padding-left: 21px;" >
+      <nav aria-label="breadcrumb"style="padding-left: 21px;" id="breadid" >
         <ol class="breadcrumb"style="width: 50%; box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);" >
           <li class="breadcrumb-item" ><a href="shop/shophome" style="color: black !important;">Home &nbsp;<mat-icon style="font-size: 15px;">home</mat-icon></a></li>
           <li class="breadcrumb-item active" aria-current="page" style="text-decoration: none;cursor: initial;">Products  &nbsp;<mat-icon style="font-size: 15px;">shopping_cart</mat-icon></li>
@@ -193,7 +193,7 @@
     
           </mat-list> -->
           <button type="button" id="filter" (click)="toggleShow()" class="btn btn-success" style=" float: right;margin-right: 10px !important; " >Filter</button>
-          <button type="button" class="btn btn-success addbutton"style=" float: right;" data-toggle="modal" data-target="#myModal">Add</button>
+          <button type="button" id="addbutton" class="btn btn-success addbutton" style=" float: right;" data-toggle="modal" data-target="#myModal">Add</button>
           
            
       </div>
@@ -248,10 +248,11 @@
                 <thead style="background: #5e72e4;font-family: serif;color:white;height: 64px;">
                   <tr>
                     <th>NO.</th>
+                    <th>CATEGORY IMAGE</th>
                     <th>CATEGORY NAME</th>
                     <th>CATEGORY TYPE</th>
                     <th>CATEGORY PRICE</th>
-                    <th>CATEGORY IMAGE</th>
+                   
                     <th>ACTION</th>
 
                   </tr>
@@ -261,11 +262,12 @@
                   <ng-container *ngFor="let doc of   this.pagedItems">
                     <tr (click)="doc.expanded=!doc.expanded">
                       <td>{{doc['shop_dtls_id']}}</td>
+                      <td> <img src="http://ec2-65-2-121-70.ap-south-1.compute.amazonaws.com{{doc['cat_image']}}" width="100px"
+                        height="100px" style="border:1px solid;"></td>
                       <td>{{doc['category_name']}}</td>
                       <td>{{doc['category']}}</td>
                       <td>{{doc['price']}}</td>
-                      <td> <img src="http://ec2-65-2-121-70.ap-south-1.compute.amazonaws.com{{doc['cat_image']}}" width="100px"
-                        height="100px" style="border:1px solid;"></td>
+                
 
 
                       <td>

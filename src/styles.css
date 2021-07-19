@@ -1010,6 +1010,22 @@ color: black !important;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+#addbutton{
+  float: left;
+    margin-right: 30px !important;
+    width: 100px;
+    background: white;
+    border: none;
+    color: #5e72e4;
+    font-weight: 500
+}
+#addbutton:hover{
+  background: white;
+  border: none;
+  color: #5e72e4;
+  box-shadow: whitesmoke;
+}
+
 #filter{
   float: left;
     margin-right: 30px !important;
@@ -1043,29 +1059,35 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .fltbtn:focus, [type="submit"]:focus {
   outline: none;
-  background-color: #2dce89;
-  border-color: #2dce89;
-  color: rgb(158, 151, 151);
+  
+  border-color: gray;
+  background: white;
+  border: none;
+  color: gray;
   }
   select:focus, [type="submit"]:focus {
     outline: none;
         }
 .fltbtn{
   width: 20%;
-  height: 33px;border-radius: 2px;border:none;
- 
+  height: 33px;
+  border-radius: 2px;
   margin-top: 31px;
-  background-color: #2dce89;
-border-color: #2dce89;
+  background: white;
+  border: grey;
+  color: #5e72e4;
+  box-shadow: 0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+  transform: translateY(-1px);
 }
 .fltbtn:hover {
   box-shadow: 0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
   transform: translateY(-1px);
 }
 .fltbtn:hover {
-  color: #fff;
-  background-color: #2dce89;
-  border-color: #2dce89;
+  background: white;
+  border: none;
+  color: gray;
+  box-shadow: whitesmoke;
 }
 #footbtn{
   color: #fff;
@@ -1113,4 +1135,16 @@ border-color: #2dce89;
  }
   thead tr th{
     font-size: 13px !important;
+  }
+  @media screen and (max-width: 768px) {
+ 
+ 
+    .breadcrumb{
+      width:100% !important;
+      
+    }
+    #breadid{
+      padding-left:15px !important;
+    }
+   
   }
