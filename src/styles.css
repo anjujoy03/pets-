@@ -941,6 +941,7 @@ transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s 
 margin-left: 20px;
 cursor: pointer;
 margin-bottom: 16px;
+border-radius: 8px !important;
 
 }
 
@@ -1137,8 +1138,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-size: 13px !important;
   }
   @media screen and (max-width: 768px) {
- 
- 
+     #fltdrop{
+       width: 42% !important;
+     }
+     #form1{
+       width: 72% !important;
+     }
     .breadcrumb{
       width:100% !important;
       
@@ -1148,3 +1153,38 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
    
   }
+  .rounded-0
+  {
+   color: black !important;
+   background:white !important;
+   border: white !important; 
+   border-radius: 7px !important;
+   box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05) !important;
+  }
+  .rounded-0:hover
+  {
+   color: rgb(155, 151, 151) !important;
+   background:white !important;
+   border: white !important; 
+   border-radius: 7px !important;
+   box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05) !important;
+  }
+  .mat-icon{
+    font-size: 24px !important;
+  }
+  
+element.style {
+  width: 50%;
+}
+[role=button], a, area, button, input:not([type=range]), label, select, summary, textarea {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+/* .form-control
+ {
+ 
+  width: 70% !important;
+}
+.col{
+  width: 50% !important;
+} */

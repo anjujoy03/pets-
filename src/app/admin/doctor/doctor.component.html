@@ -269,10 +269,19 @@
             <br>
             <br>
               <div class="card-header border-0">
-                  <h6 class="mb-0 card-header-title " style="font-size: 20px;">Manage Doctors</h6>
-                  <div style="float: left;">
-
+                <div class="row">
+                  <div class="col-sm-6">
+                    <h6 class="mb-0 card-header-title " style="font-size: 20px;" tabhead>Manage Doctors</h6>
                   </div>
+                  <div class="col-sm-6">
+                    <select name="cars" id="cars"  style="width: 50%;height: 35px;border: 1px solid #ced4da;border-radius: .25rem;">
+                      <option value="no">1</option>
+                      <option value="">2 </option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                    </select>
+                  </div>
+                </div>
                 </div>
                 <br>
                 <br>
@@ -738,29 +747,66 @@
       <div class="row">
         <div class="modal" id="myModal" >
           <div class="modal-dialog" >
-            <div class="modal-content"style="width: 200% !important;left: 0;margin-bottom:90px">
+            <div class="modal-content"style="width: 150%;left: 0;margin-bottom:90px">
               <div class="modal-header" style="text-align: center;">
                 <h4 class="modal-title" style="font-family: serif;color:white">
                     
                   ADD DOCTORS
                     
                 </h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+             
               </div>
               <div class="modal-body">
-                <form style="padding-left: 10px;padding-right: 40px;" [formGroup]="doctorForm">
+                <form style="padding-left: 30px;padding-right: 60px;" [formGroup]="doctorForm">
+                  <h1>Personal Details</h1>
                   <div class="row">
-                    <div class="col">
+                    <div class="col-sm-6">
                       <label for="exampleFormControlInput1">Doctor Name:</label>
                       <input type="text" class="form-control" id="drname" placeholder=""  formControlName="doc_name">
                     </div>
-                    <div class="col">
-                      <label for="exampleFormControlInput1">Clinic/Hospital Name :</label>
-                      <input type="text" class="form-control" id="drname" placeholder=""  formControlName="clinic_name">
+                    <div class="col-sm-6">
+                      <label for="exampleFormControlInput3">Gender: </label>
+                      <select class="form-control" id="purpose" formControlName="gender">
+                        <option selected disabled>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+  
+                    </select>
                     </div>
 
+
+                  </div>
+        
+                  <br>
+                  <h2 style="color: black;">Proffessional Details</h2>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <label for="exampleFormControlInput1">Clinic/Hospital Name :</label>
+                      <input type="text" class="form-control" id="drname" placeholder=""  formControlName="clinic_name">
+
+                     </div>
                    
-                    <div class="col">
+                  
+                   
+                    <div class="col-sm-6">
+                                           <label for="exampleFormControlInput1">Type of Medicine:</label>
+                    <select class="form-control" id="typeofmedicine" formControlName="medicine_type">
+                      <option value="AYURVEDA">AYURVEDA</option>
+                      <option value="HOMEOPATHY">HOMEOPATHY</option>
+                      <option value="ALOPATHY">ALOPATHY</option>
+                    </select>
+                    </div>
+                  </div>
+                  
+                  <br>
+                  <div class="row">
+
+                    <div class="col-sm-6">
+                      <label for="exampleFormControlSelect1">Proffessional Membership Details:</label>
+                      <textarea class="form-control" id="membership" rows="1" formControlName="memb_details"></textarea>
+                     
+                    </div>
+                    <div class="col-sm-6">
                       <label for="exampleFormControlInput2">Specialist Category:</label>
                       <select class="form-control" id="Specialistcategory" formControlName="speciality">
                         <option value="ANESTHESIA AND ANALGESIA">ANESTHESIA AND ANALGESIA</option>
@@ -786,81 +832,63 @@
                         <option value="NUTRITION"> NUTRITION</option>
                         <option value="MICROBIOLOGY">MICROBIOLOGY</option>
                       </select>
+                     
                     </div>
-                  </div>
-                  <br>
-                  <div class="row">
-                    <div class="col">
-                      <label for="exampleFormControlInput1">Type of Medicine:</label>
-                    <select class="form-control" id="typeofmedicine" formControlName="medicine_type">
-                      <option value="AYURVEDA">AYURVEDA</option>
-                      <option value="HOMEOPATHY">HOMEOPATHY</option>
-                      <option value="ALOPATHY">ALOPATHY</option>
-                    </select>
-                     </div>
                    
-                  
-                   
-                    <div class="col">
-                      <label for="exampleFormControlSelect1">Proffessional Membership Details:</label>
-                      <textarea class="form-control" id="membership" rows="1" formControlName="memb_details"></textarea>
-                    </div>
                   </div>
-                  
                   <br>
                   <div class="row">
 
-                    <div class="col">
+                    <div class="col-sm-6">
                       <label for="exampleFormControlSelect1">License Number:</label>
                       <input type="text" class="form-control" id="licenseno" placeholder="" formControlName="licence_number" >
-                    </div>
-                    <div class="col">
-                     
-                    
-                        <label for="exampleFormControlInput3">Gender: </label>
-                        <select class="form-control" id="purpose" formControlName="gender">
-                          <option selected disabled>Select Gender</option>
-                          <option value="male">Male</option>
-                          <option value="female">Female</option>
-    
-                      </select>
-                     
-
-                    </div>
-                   
-                   
                   </div>
-                  <br>
-                  
+                  <div class="col-sm-6">
+                    <label for="exampleFormControlSelect1">Date of Cetification:</label>
+                    <input type="date" class="form-control" id="dateofcertification" placeholder="" formControlName="date_certicialtion" >
+                  </div>
+                </div>
+                <br>
+                  <h2 style="color: black;">Consulting Details</h2>
                   <div class="row">
-                    
-                     <div class="col">
-                      <label for="exampleFormControlSelect1">Date of Cetification:</label>
-                      <input type="date" class="form-control" id="dateofcertification" placeholder="" formControlName="date_certicialtion" >
+               
                      
-                    </div>
-                    <div class="col">
+                    
+                      <div class="col-sm-6">
+                        <label for="exampleFormControlTextarea1">Consulting Time:</label>
+                        <input type="time" class="form-control" id="time" placeholder=""  formControlName="consulting_time">
+                      </div>
+  
+              
+                   
+
+                 
+                 
+                   
+                    <div class="col-sm-6">
                       <label for="exampleFormControlSelect1">Consulting Fees:</label>
                       <input type="text" class="form-control" id="fees" placeholder="" formControlName="fees">
                     </div>
                   </div>
                   <br>
                   <div class="row">
-                    <div class="col">
+                    <div class="col-sm-6">
                       <label for="exampleFormControlTextarea1">Consulting Days : </label>
                       <input type="text" class="form-control" id="day" placeholder="" formControlName="consulting_days" >
                      
                     </div>
-                    <div class="col">
-                      <label for="exampleFormControlTextarea1">Consulting Time:</label>
-                      <input type="time" class="form-control" id="time" placeholder=""  formControlName="consulting_time">
+                    <div class="col-sm-6">
+
                     </div>
                    
                   </div>
                  
                   <br>
+       
+                
+                  <h2>Contact Details</h2>
                   <div class="row">
-                    <div class="col">
+                    <div class="col-sm-6">
                       <label for="exampleFormControlTextarea1">State : </label>
                     
                       <select class="form-control" id="typeofmedicine" formControlName="state" (change)="getDistrict($event)">
@@ -870,7 +898,7 @@
                       
                      
                     </div>
-                    <div class="col">
+                    <div class="col-sm-6">
                       <label for="exampleFormControlTextarea1">Distrct :</label>
                       <select class="form-control" id="typeofmedicine" formControlName="place" >
                         <option *ngFor="let district of this.District" value="{{district.district_title}}">{{district.district_title}}</option>
@@ -882,20 +910,28 @@
                   </div>
                   <br>
                   <div class="row">
-                    <div class="col">
+                    
+                    <div class="col-sm-6">
                       <label for="exampleFormControlTextarea1">Mobile Number : </label>
                       <input type="number" class="form-control" id="mobile" placeholder="" formControlName="contact_number" >
                     </div>
-                    <div class="col">
+                    <div class="col-sm-6">
                       <label for="exampleFormControlTextarea1">Address :</label>
                       <textarea class="form-control" id="address" rows="1" formControlName="adress"></textarea>
                     </div>
-                    <div class="col">
+                    
+                   
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-6">
                       <label for="exampleFormControlTextarea1">Add Image : </label>
                       <input type="file" id="pro-image" name="pro-image" 
                       class="form-control" multiple formControlName="image" (change)="onChange($event)">
                     </div>
-                   
+                    <div class="col-sm-6">
+
+                    </div>
                   </div>
                   <!-- <div class="row">
                     <div class="col">
@@ -911,7 +947,7 @@
                 <div class="modal-footer">
                 
                   <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CLOSE</button>
-                    <button type="button" id="footbtn"  class="btn btn-success" (click)="onSubmit()" data-dismiss="modal">SAVE DOCTOR</button>
+                  <button type="button" id="footbtn"  class="btn btn-success" (click)="onSubmit()" data-dismiss="modal">SAVE DOCTOR</button>
                  
                   </div>
                    

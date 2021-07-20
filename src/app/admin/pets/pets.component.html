@@ -249,7 +249,19 @@
                 <br>
                 <br>
                   <div class="card-header border-0">
-                      <h6 class="mb-0 card-header-title " style="font-size: 20px;">Manage Pets</h6>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <h6 class="mb-0 card-header-title " style="font-size: 20px;" id="tabhead">Manage Pets</h6>
+                        </div>
+                        <div class="col-sm-6">
+                          <select name="cars" id="cars"  style="width: 50%;height: 35px;border: 1px solid #ced4da;border-radius: .25rem;">
+                            <option value="no">1</option>
+                            <option value="">2 </option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
                     <br>
                     <br>
@@ -281,9 +293,7 @@
                         <td> 
                           <ul class="list-inline m-0">
                             <li class="list-inline-item" style="padding-right: 20px;padding-bottom: 10px;">
-                                <button class="btn btn-success btn-sm rounded-0"  style="color: #7278bc;
-                                background:none;
-                                border: none;"type="button" data-toggle="tooltip" data-placement="top" title="View" (click)="viewDetails(pet['pet_id'],pet)" > <mat-icon *ngIf="pet.expanded">visibility</mat-icon><mat-icon *ngIf="!pet.expanded">visibility_off</mat-icon></button>
+                                <button class="btn btn-success btn-sm rounded-0"  type="button" data-toggle="tooltip" data-placement="top" title="View" (click)="viewDetails(pet['pet_id'],pet)" > <mat-icon *ngIf="pet.expanded">visibility</mat-icon><mat-icon *ngIf="!pet.expanded">visibility_off</mat-icon></button>
                             </li>
 
                         <li class="list-inline-item" style="padding-right: 20px;padding-bottom: 10px;">
@@ -576,8 +586,8 @@
                     
                
               <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CLOSE</button>
-                <button type="button"  id="footbtn" class="btn btn-success" (click)="onSubmit()" data-dismiss="modal">ADD PET</button>
+                <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CANCEL</button>
+                <button type="button"  id="footbtn" class="btn btn-success" (click)="onSubmit()" data-dismiss="modal">SUBMIT</button>
               </div>
               </form>
            
