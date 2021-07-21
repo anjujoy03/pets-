@@ -105,39 +105,77 @@
  
 <div class="container" style=" margin-top: 0px;max-width: 100% !important;" [ngClass]="{'bigcontainer': show}" >
   <div class="top_navbar" id="fixed-nav-bar" style="padding-top: 30px;">
-    <div class="sdd" >
-      <div style="display: inline;">fghj</div>
-      
-      <div class="profile px-8" style="display: inline;float: right;">
-          <mat-icon  style="cursor:pointer;" *ngIf="logactive"  style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle{{UserId}}</mat-icon>
-          <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>&nbsp;&nbsp;<span style="color:white;position: absolute;left: 66px;
-          top: 2px;">{{UserId}}</span>
-          <mat-list role="list" *ngIf="logactive">
-          <mat-list-item role="listitem"><mat-icon style="color: darkcyan;font-size: 18px;">perm_identity</mat-icon>{{UserId}}</mat-list-item>
-          <hr>
-          <mat-list-item role="listitem" (click)="Logout()"><mat-icon style="color:rgb(226, 149, 6);font-size: 18px;">settings_power</mat-icon>Logout</mat-list-item>
-          </mat-list>
+    <div class="row col-md-12" style="margin-top: -11px;">
+      <div class="col-md-8">
+       <div style="margin-top: -20px;">
+        
+          <!-- <div class="input-group" style="width: 42%;
+          height: 44px;">
+              <input type="text" class="form-control search-form" 
+               placeholder="Search" style="height: 44px;">
+               <span class="input-group-btn">
+                 <button type="submit" 
+                 class="btn search-btn" data-target="#search-form" 
+                 name="q">
+                   <i class="fa fa-search"></i>
+                 </button>
+               </span>
+             </div> -->
+          
+       </div>
+
+              
+            
       </div>
-    </div>
-      <!-- <div class="row col-md-12" style="margin-top: -11px;">
-          <div class="col-md-8">
-             <div style="margin-top: -20px;">   
-             </div>     
-          </div>
-          <div class="col-md-4">
-             <div class="profile px-8">
-                  <mat-icon  style="cursor:pointer;" *ngIf="logactive"  style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle{{UserId}}</mat-icon>
+      <div class="col-md-4">
+      <div class="profile px-8" >
+        
+        <!-- <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Dropdown link</a></li>
+            <li><a href="#">Dropdown link</a></li>
+          </ul>
+        </div> -->
+         
+              <!-- <span class="icon shadow-lg"><i class="fas fa-profile" data-toggle="tooltip" data-placement="top" title="Logout" style="color: white;text-shadow: 0 0 black"></i></span> -->
+              <!-- <mat-icon   style="color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);font-size: 31px;">account_circle</mat-icon> -->
+              <!-- <mat-icon style="color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);font-size: 31px;">account_circle</mat-icon> -->
+              <mat-icon  style="cursor:pointer;" *ngIf="logactive"  style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>
                   <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>&nbsp;&nbsp;<span style="color:white;position: absolute;left: 66px;
                   top: 2px;">{{UserId}}</span>
+                    
                   <mat-list role="list" *ngIf="logactive">
-                  <mat-list-item role="listitem"><mat-icon style="color: darkcyan;font-size: 18px;">perm_identity</mat-icon>{{UserId}}</mat-list-item>
-                  <hr>
-                  <mat-list-item role="listitem" (click)="Logout()"><mat-icon style="color:rgb(226, 149, 6);font-size: 18px;">settings_power</mat-icon>Logout</mat-list-item>
+                    <mat-list-item role="listitem" style="background-color: transparent;">
+                      <mat-icon id="mat-icon" >perm_identity</mat-icon>{{UserId}}</mat-list-item>
+                    <!-- <mat-list-item role="listitem"><mat-icon style="color:rgb(168, 67, 67);font-size: 18px;">settings</mat-icon>Settings</mat-list-item> -->
+                    <hr>
+                    <mat-list-item role="listitem" (click)="Logout()">
+                      <mat-icon id="mat-icon">settings_power</mat-icon>Logout</mat-list-item>
                   </mat-list>
-             </div>
-          </div>
-      </div> -->
+          
+          
+      </div>
+
   </div>
+  </div>
+ 
+<!-- <div class="menu" style="position: static; float: none;">
+
+
+  <li>
+    <a href="login">
+      <span class="icon"><i class="fas fa-sign-out-alt" data-toggle="tooltip" data-placement="top" title="Logout" style="color: black;"></i></span>
+      <span class="title"></span>
+    </a>
+    </li>
+
+</div> -->
+</div>
+
 
 
 <div class="row" style="padding-bottom: 0px;background-color: #5e72e4;margin-top: -20px;padding-top: 100px;">

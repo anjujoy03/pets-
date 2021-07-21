@@ -19,21 +19,7 @@
     background: #fff;
     border-radius: 4px;
   }
-  mat-list-item:hover{
-    background: #3f51b5 !important;
-    color: white !important;
-  }
-  .mat-nav-list .mat-list-item:focus,
-.mat-action-list .mat-list-item:focus,
-.mat-list-option:focus {
-  background: #3f51b5 !important;
-  color: white !important;
-}
-.mat-nav-list .mat-list-item:active{
-  background: #3f51b5 !important;
-  color: white !important;
-
-}
+ 
   .activepage a{
     background: #3f51b5 !important;
     color: white !important;
@@ -120,6 +106,7 @@
   }
   .modal-content{
     width: 100% !important;
+    left: 0px !important;
   }
   #myModal{
     width: 100% !important;
@@ -266,6 +253,11 @@
   .panel-inverse {
     border-color: #000;
 }
+
+#dropnav{
+ 
+}
+
 
 
 

@@ -24,21 +24,7 @@
     color: white !important;
     box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05) !important;
   }
-  mat-list-item:hover{
-    background: #3f51b5 !important;
-    color: white !important;
-  }
-  .mat-nav-list .mat-list-item:focus,
-.mat-action-list .mat-list-item:focus,
-.mat-list-option:focus {
-  background: #3f51b5 !important;
-  color: white !important;
-}
-.mat-nav-list .mat-list-item:active{
-  background: #3f51b5 !important;
-  color: white !important;
-
-}
+  
   .accordion .menu {
     position: relative;
     padding: 17px 15px 25px 45px;

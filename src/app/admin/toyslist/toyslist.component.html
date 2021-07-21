@@ -148,10 +148,12 @@
                   top: 2px;">{{UserId}}</span>
                     
                     <mat-list role="list" *ngIf="logactive">
-                      <mat-list-item role="listitem"><mat-icon style="color: darkcyan;font-size: 18px;">perm_identity</mat-icon>{{UserId}}</mat-list-item>
+                      <mat-list-item role="listitem" style="background-color: transparent;">
+                        <mat-icon id="mat-icon">perm_identity</mat-icon>{{UserId}}</mat-list-item>
                       <!-- <mat-list-item role="listitem"><mat-icon style="color:rgb(168, 67, 67);font-size: 18px;">settings</mat-icon>Settings</mat-list-item> -->
                       <hr>
-                      <mat-list-item role="listitem" (click)="Logout()"><mat-icon style="color:rgb(226, 149, 6);font-size: 18px;">settings_power</mat-icon>Logout</mat-list-item>
+                      <mat-list-item role="listitem" (click)="Logout()">
+                        <mat-icon id="mat-icon"  >settings_power</mat-icon>Logout</mat-list-item>
                     </mat-list>
               
           </div>

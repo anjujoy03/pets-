@@ -128,7 +128,7 @@
                 
           </div>
           <div class="col-md-4">
-          <div class="profile px-8" >
+          <div class="profile px-8">
             
             <!-- <div class="btn-group" role="group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -148,11 +148,13 @@
                   <mat-icon   style="cursor:pointer;"  *ngIf="!logactive" style="color: white;font-size: 31px;margin-left: 15px;" (click)="accountdropdown()">account_circle</mat-icon>&nbsp;&nbsp;<span style="color:white;position: absolute;left: 66px;
                   top: 2px;">{{UserId}}</span>
                     
-                  <mat-list role="list" *ngIf="logactive">
-                    <mat-list-item role="listitem"><mat-icon style="color: darkcyan;font-size: 18px;">perm_identity</mat-icon>{{UserId}}</mat-list-item>
+                  <mat-list role="list" *ngIf="logactive" >
+                    <mat-list-item role="listitem" style=" background-color: transparent;" id="dropnav">
+                    <mat-icon id="mat-icon">perm_identity</mat-icon>{{UserId}}</mat-list-item>
                     <!-- <mat-list-item role="listitem"><mat-icon style="color:rgb(168, 67, 67);font-size: 18px;">settings</mat-icon>Settings</mat-list-item> -->
                     <hr>
-                    <mat-list-item role="listitem" (click)="Logout()"><mat-icon style="color:rgb(226, 149, 6);font-size: 18px;">settings_power</mat-icon>Logout</mat-list-item>
+                    <mat-list-item role="listitem"id="dropnav" (click)="Logout()" >
+                    <mat-icon id="mat-icon" >settings_power</mat-icon >Logout</mat-list-item>
                   </mat-list>
               
               
@@ -747,14 +749,11 @@
       <div class="row">
         <div class="modal" id="myModal" >
           <div class="modal-dialog" >
-            <div class="modal-content"style="width: 150%;left: 0;margin-bottom:90px">
+            <div class="modal-content"style="width: 150%;left: 126px;margin-bottom:90px">
               <div class="modal-header" style="text-align: center;">
                 <h4 class="modal-title" style="font-family: serif;color:white">
-                    
                   ADD DOCTORS
-                    
                 </h4>
-             
               </div>
               <div class="modal-body">
                 <form style="padding-left: 30px;padding-right: 60px;" [formGroup]="doctorForm">
@@ -770,8 +769,7 @@
                         <option selected disabled>Select Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
-  
-                    </select>
+                      </select>
                     </div>
 
 
@@ -946,8 +944,8 @@
                   
                 <div class="modal-footer">
                 
-                  <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CLOSE</button>
-                  <button type="button" id="footbtn"  class="btn btn-success" (click)="onSubmit()" data-dismiss="modal">SAVE DOCTOR</button>
+                  <button type="button" class="btn btn-success" id="footclose" data-dismiss="modal" >CANCEL</button>
+                  <button type="button" id="footbtn"  class="btn btn-success" (click)="onSubmit()" data-dismiss="modal">SUBMIT</button>
                  
                   </div>
                    
