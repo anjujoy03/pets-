@@ -253,6 +253,9 @@
     border-color: #000;
 }
 
+#inline{width:100%;height:auto;background-color:black;display:flex;} 
+.one,.two{width:50%;height:100px;background-color:green;margin:10px;}
+
 
 
 

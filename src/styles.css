@@ -1216,6 +1216,26 @@ mat-list
     border-radius: .4375rem;
    box-shadow: 0 50px 100px rgb(50 50 93 / 10%), 0 15px 35px rgb(50 50 93 / 15%), 0 5px 15px rgb(0 0 0 / 10%);
 }
+.dropdown-header {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: .625rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.dropdown-header {
+  display: block;
+  padding: .5rem 1rem;
+  margin-bottom: 0;
+  color: #8898aa;
+  white-space: nowrap;
+}
+#wel{
+font-family: inherit;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #32325d !important;
+}
 
 
 mat-list-item:hover{
@@ -1235,4 +1255,7 @@ color: #16181b;
 text-decoration: none;
 background-color: #f6f9fc;
 
+}
+.cardfil{
+  border-radius: 8px !important;
 }
